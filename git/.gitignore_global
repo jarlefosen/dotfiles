@@ -1,0 +1,63 @@
+# Configure global gitignore #
+##############################
+# git config --global core.excludesfile ~/.gitignore_global
+
+# Exclude from gitignore #
+##########################
+!.gitignore
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+ 
+# Packages #
+############
+*.dmg
+*.gz
+*.iso
+ 
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+ 
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Eclipse #
+###########
+*.iml
+*.classpath
+*.project
+*.settings/
+
+# Intellij #
+############
+*.idea/
+*.iml
+*.iws
+
+# Maven #
+#########
+log/
+target/
+
+# Play Framework #
+##################
+project/project
+project/target
+target
+activator-*.sbt
