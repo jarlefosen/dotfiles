@@ -1,3 +1,4 @@
+;;; All credits to Lars Tveito (larstvei) for this Emacs configuration.
 
 ;; Meta
 
@@ -240,7 +241,7 @@ PACKAGE is installed and the current version is deleted."
 ;;    change them in a single buffer. Using =setq-default= we change the
 ;;    buffer-local variable's default value.
 
-(setq-default fill-column 76                    ; Maximum line width.
+(setq-default
               indent-tabs-mode nil              ; Use spaces instead of tabs.
               split-width-threshold 100         ; Split verticly by default.
               auto-fill-function 'do-auto-fill) ; Auto-fill-mode everywhere.
@@ -324,12 +325,6 @@ PACKAGE is installed and the current version is deleted."
 ;; This makes =.md=-files open in =markdown-mode=.
 
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;; Visual
-
-;;    Change the color-theme to =monokai= (downloaded using =package=).
-
-(load-theme 'monokai t)
 
 ;; Use the [[http://www.levien.com/type/myfonts/inconsolata.html][Inconsolata]] font if it's installed on the system.
 
@@ -448,7 +443,7 @@ PACKAGE is installed and the current version is deleted."
              mu4e-trash-folder      "/INBOX.Trash"   ; trashed messages
              mu4e-refile-folder     "/INBOX.Archive" ; saved messages
              mu4e-get-mail-command  "offlineimap"    ; offlineimap to fetch mail
-             mu4e-compose-signature "- Lars"         ; Sign my name
+             mu4e-compose-signature "- Jarle"        ; Sign my name
              mu4e-update-interval   (* 5 60)         ; update every 5 min
              mu4e-confirm-quit      nil              ; just quit
              mu4e-view-show-images  t                ; view images
@@ -457,9 +452,9 @@ PACKAGE is installed and the current version is deleted."
 
        ;; Setup for sending mail.
        (setq user-full-name
-             "Lars Tveito"                        ; Your full name
+             "Jarle Fosen"                        ; Your full name
              user-mail-address
-             "larstvei@ifi.uio.no"                ; And email-address
+             "jarlefo@ifi.uio.no"                 ; And email-address
              smtpmail-smtp-server
              "smtp.uio.no"                        ; Host to mail-server
              smtpmail-smtp-service 465            ; Port to mail-server
@@ -832,9 +827,9 @@ the languages in ISPELL-LANGUAGES when invoked."
 ;; (setq jedi:server-command
 ;;       (cons "python3" (cdr jedi:server-command))
 ;;       python-shell-interpreter "python3")
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+;(add-hook 'python-mode-hook 'jedi:setup)
+;(setq jedi:complete-on-dot t)
+;(add-hook 'python-mode-hook 'jedi:ac-setup)
 
 ;; Haskell
 
@@ -842,13 +837,31 @@ the languages in ISPELL-LANGUAGES when invoked."
 ;;    the echo area. Haskell has several indentation modes - I prefer using
 ;;    =haskell-indent=.
 
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
 ;; Matlab
 
 ;;    =Matlab-mode= works pretty good out of the box, but we can do without the
 ;;    splash screen.
 
-(eval-after-load 'matlab
-  '(add-to-list 'matlab-shell-command-switches "-nosplash"))
+;(eval-after-load 'matlab
+;  '(add-to-list 'matlab-shell-command-switches "-nosplash"))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("b7d8113de2f7d9a3cf42335d8eed8415b5a417e7f6382e59076f9f4ae4fa4cee" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; Visual
+
+;;    Change the color-theme to =monokai= (downloaded using =package=).
+
+(load-theme 'monokai t)
