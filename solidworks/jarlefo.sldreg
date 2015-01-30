@@ -736,9 +736,9 @@ REGEDIT4
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate0\Custom Accelerators\AddArray]
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate0\Custom Accelerators\AddArray\3_85]
-"fVirt"=dword:00000003
-"key"=dword:00000055
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate0\Custom Accelerators\AddArray\11_90]
+"fVirt"=dword:0000000b
+"key"=dword:0000005a
 "cmd"=dword:0000e12b
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate0\Custom Accelerators\SubArray]
@@ -748,15 +748,17 @@ REGEDIT4
 "key"=dword:0000005a
 "cmd"=dword:0000e12b
 
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate0\Custom Menus]
+
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate1]
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate1\Custom Accelerators]
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate1\Custom Accelerators\AddArray]
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate1\Custom Accelerators\AddArray\3_85]
-"fVirt"=dword:00000003
-"key"=dword:00000055
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate1\Custom Accelerators\AddArray\11_90]
+"fVirt"=dword:0000000b
+"key"=dword:0000005a
 "cmd"=dword:0000e12b
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate1\Custom Accelerators\SubArray]
@@ -766,15 +768,17 @@ REGEDIT4
 "key"=dword:0000005a
 "cmd"=dword:0000e12b
 
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate1\Custom Menus]
+
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate2]
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate2\Custom Accelerators]
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate2\Custom Accelerators\AddArray]
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate2\Custom Accelerators\AddArray\3_85]
-"fVirt"=dword:00000003
-"key"=dword:00000055
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate2\Custom Accelerators\AddArray\11_90]
+"fVirt"=dword:0000000b
+"key"=dword:0000005a
 "cmd"=dword:0000e12b
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate2\Custom Accelerators\SubArray]
@@ -783,6 +787,8 @@ REGEDIT4
 "fVirt"=dword:0000000b
 "key"=dword:0000005a
 "cmd"=dword:0000e12b
+
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Customization\tPlate2\Custom Menus]
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Default Lighting]
 
@@ -852,7 +858,7 @@ REGEDIT4
 "PreviousSelectedSWSTDList"="C:\\Program Files\\SolidWorks Corp\\SolidWorks (2)\\DsgnChk\\Data\\ANSI.swstd*C:\\Program Files\\SolidWorks Corp\\SolidWorks (2)\\DsgnChk\\Data\\ISO.swstd*C:\\Program Files\\SolidWorks Corp\\SolidWorks (2)\\DsgnChk\\Data\\DIN.swstd*C:\\Program Files\\SolidWorks Corp\\SolidWorks (2)\\DsgnChk\\Data\\JIS.swstd*C:\\Program Files\\SolidWorks Corp\\SolidWorks (2)\\DsgnChk\\Data\\BSI.swstd*C:\\Program Files\\SolidWorks Corp\\SolidWorks (2)\\DsgnChk\\Data\\GOST.swstd*C:\\Program Files\\SolidWorks Corp\\SolidWorks (2)\\DsgnChk\\Data\\GB.swstd"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Dimensions]
-"MRU Length Dimension1"="5e-005"
+"MRU Length Dimension1"="0.06"
 "MRU Angle Dimension1"="0.0174532925199433"
 "Arrow Height"="0.0018"
 "Arrow Width"="0.006"
@@ -886,10 +892,10 @@ REGEDIT4
 "List Broken References"=dword:00000000
 "New Doc Dialog List State"=dword:00000000
 "Bend Note Style"=dword:00000000
-"MRU Length Dimension2"="0.0001"
+"MRU Length Dimension2"="0.025"
 "MRU Length Dimension3"="0.01"
-"MRU Length Dimension4"="1e-005"
-"MRU Length Dimension5"="0.00015"
+"MRU Length Dimension4"="0.02"
+"MRU Length Dimension5"="5e-005"
 "MRU Angle Dimension2"="0.78539816339745"
 "MRU Angle Dimension3"="2.71608138195358"
 "MRU Angle Dimension4"="6.2831853071796"
@@ -903,60 +909,18 @@ REGEDIT4
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout]
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Pane-1]
-"Type"=dword:00000000
-"DockingCX"=dword:000000c8
-"DockingCY"=dword:00000078
-"Title"="CommandManager"
-"ID"=dword:00000228
-"Options"=dword:00000020
-"DockingHolder"=dword:00000004
-"FloatingHolder"=dword:00000007
-"LastHolder"=dword:00000007
+"Type"=dword:00000002
+"Horiz"=dword:00000001
+"Panes"=dword:00000001
+"Pane-1"=dword:00000002
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Pane-2]
-"Type"=dword:00000002
-"Horiz"=dword:00000001
-"Panes"=dword:00000002
-"Pane-1"=dword:00000003
-"Pane-2"=dword:00000004
-
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Pane-3]
 "Type"=dword:00000004
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Pane-4]
-"Type"=dword:00000001
-"DockingCX"=dword:000000c8
-"DockingCY"=dword:00000078
-"Panes"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Pane-5]
-"Type"=dword:00000003
-"WindowRectTopPos"=dword:00000034
-"WindowRectBottomPos"=dword:0000040e
-"WindowRectLeftPos"=dword:000003b0
-"WindowRectRightPos"=dword:0000045f
-"TopContaner"=dword:00000006
-
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Pane-6]
-"Type"=dword:00000002
-"DockingCX"=dword:000000c8
-"DockingCY"=dword:00000078
-"Horiz"=dword:00000001
-"Panes"=dword:00000001
-"Pane-1"=dword:00000007
-
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Pane-7]
-"Type"=dword:00000001
-"DockingCX"=dword:000000c8
-"DockingCY"=dword:00000078
-"Panes"=dword:00000001
-"Selected"=dword:00000001
-"Pane-1"=dword:00000001
-
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\DockingPaneLayouts\DockingPaneLayout\Summary]
-"Panes"=dword:00000007
-"TopContainer"=dword:00000002
-"Client"=dword:00000003
+"Panes"=dword:00000002
+"TopContainer"=dword:00000001
+"Client"=dword:00000002
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Document Templates]
 "Templates Last Tab Used"="Templates"
@@ -1323,7 +1287,7 @@ REGEDIT4
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\General]
 "UserExperienceLevel"=dword:00000001
-"Last Splash Id"=dword:00000005
+"Last Splash Id"=dword:00000006
 "AutoRecover Directory"=""
 "AutoRecover Mode"=dword:00000001
 "SaveNotification"=dword:00000001
@@ -1661,7 +1625,7 @@ REGEDIT4
 "Show all mate entities"=dword:00000001
 "Replace all instances of component"=dword:00000000
 "Linked design table update type"=dword:00000000
-"Last user path"="C:\\xampp\\htdocs\\lec\\P1\\"
+"Last user path"="M:\\pc\\Desktop\\"
 "RMB learning mode"=dword:00000001
 "Enable Zebra Stripes preview"=dword:00000000
 "Warn about feature select for body selection"=dword:00000001
@@ -1728,7 +1692,7 @@ REGEDIT4
 "Equation potential circular dependency message Loc"=dword:00000001
 "PPL Concurrency Level"=dword:00000000
 "Reconnect RTRenderer Animation NumFrames"=dword:00000000
-"Show In Context View Box With View Orientation Dialog"=dword:00000000
+"Show In Context View Box With View Orientation Dialog"=dword:00000001
 "Ray Tracing Application Debugging"=dword:00000000
 "Set Point-To-Point status for Measure Dialog"=dword:00000001
 "AsmVirtualSubassemblyViewType"=dword:00000000
@@ -6106,6 +6070,21 @@ REGEDIT4
 "44028"=dword:00000000
 "59949"=dword:00000000
 "54645"=dword:00000000
+"43824"=dword:00000000
+"43555"=dword:00000000
+"43553"=dword:00000000
+"43821"=dword:00000000
+"59801"=dword:00000000
+"59802"=dword:00000000
+"1652"=dword:00000000
+"38670"=dword:00000000
+"43534"=dword:00000000
+"51638"=dword:00000000
+"43549"=dword:00000000
+"43566"=dword:00000000
+"33584"=dword:00000000
+"185316"=dword:00000000
+"169568"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Page]
 "Use Printer Margins"=dword:00000001
@@ -7922,7 +7901,7 @@ REGEDIT4
 "Recent-3"="ns"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Search\Recent Command Searches]
-"Search Strings"="PROJECT;SCA;SC;SCALE;CHA;CH;CH;CH;CH;TEX;E;ELL;CH;CH;CH;PRO;PRO;CH;CH;CH;PLOTS;COM;EQ;WRA;POL;SELECTIO;CONI;FIELD;CH;CH;EL;EL;CH;POLY;SPLINE;SPL;SP;SPL;SPLI;SPLI;SPL;SPL;CIR;PIC;CH;CH;O;WR;WR;WR;PRO;PRO;PRO;OPT;INS;WR;CH;CH;3D;SPI;DEL;INT;MA;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;INSE;CH;ADD;CH;CH;PO;IN;HEL;IN;INDE;IND;IND;IND;IND;IND;IN;OFF;IN;IN;TE;IN;IN;SPIR;CH;CH;CH;DERI;IN;IN;AX;AXI;TE;PO;COO;ANN;TE;TE;CH;CH;CH;CH;TE;TE;TE;TES;TE;TE;TE;S;CH;C;IN;CO;CO;CO;F;CH;CH;CH;HE;CH;CH;CH;CH;CH;CH;CO;CO;CO;CO;TE;IN;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CO;CH;CH;CH;CH;HE;CH;CH;CH;CH;CH;CH;EL;CH;CH;CO;CO;CO;CO;DE;TE;CH;PO;CH;CH;CH;CH;CH;CH;HE;HE;TE;CH;CH;HE;INTER;CO;CO;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;CH;COMM;CH;CH;SETTINGS;"
+"Search Strings"="PROJECT;SCA;SC;SCALE;CHA;CH;CH;CH;CH;TEX;E;ELL;CH;CH;CH;PRO;PRO;CH;CH;CH;PLOTS;COM;EQ;WRA;POL;SELECTIO;CONI;FIELD;CH;CH;EL;EL;CH;POLY;SPLINE;SPL;SP;SPL;SPLI;SPLI;SPL;SPL;CIR;PIC;CH;CH;O;WR;WR;WR;PRO;PRO;PRO;OPT;INS;WR;CH;CH;3D;SPI;DEL;INT;MA;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;INSE;CH;ADD;CH;CH;PO;IN;HEL;IN;INDE;IND;IND;IND;IND;IND;IN;OFF;IN;IN;TE;IN;IN;SPIR;CH;CH;CH;DERI;IN;IN;AX;AXI;TE;PO;COO;ANN;TE;TE;CH;CH;CH;CH;TE;TE;TE;TES;TE;TE;TE;S;CH;C;IN;CO;CO;CO;F;CH;CH;CH;HE;CH;CH;CH;CH;CH;CH;CO;CO;CO;CO;TE;IN;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CH;CO;CH;CH;CH;CH;HE;CH;CH;CH;CH;CH;CH;EL;CH;CH;CO;CO;CO;CO;DE;TE;CH;PO;CH;CH;CH;CH;CH;CH;HE;HE;TE;CH;CH;HE;INTER;CO;CO;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;TE;CH;COMM;CH;CH;SETTINGS;SHORTC;KEY;PREFE;SHORT;OPTIONS;TOOLS;"
 "PROJECT"="32958"
 "SCA"="34247"
 "SC"="34247"
@@ -7984,6 +7963,12 @@ REGEDIT4
 "INTER"="33921"
 "COMM"="33533"
 "SETTINGS"="34124"
+"SHORTC"="37995"
+"KEY"="37434"
+"PREFE"="43563"
+"SHORT"="37995"
+"OPTIONS"="34124"
+"TOOLS"="33502"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\Security]
 "EULA Accepted 2013 SP5.0 IFI-MERIMAC jarlefo"="Yes"
@@ -8049,7 +8034,7 @@ REGEDIT4
 "File Have Been Sent"=dword:00000000
 "Finished Last Time"=dword:00000001
 "Last Date Code"="21/2013273"
-"Check In"=dword:00000138
+"Check In"=dword:000005f2
 "Idle"=dword:00000000
 "Last Settings Time"=dword:54cb7aee
 "Email Enabled"=dword:00000000
@@ -8258,7 +8243,7 @@ REGEDIT4
 "Btn0"="2,41156"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext1]
-"contextid"="2"
+"contextid"="1"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext1\GB0]
 "Btn0"="2,41160"
@@ -8287,7 +8272,7 @@ REGEDIT4
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext2]
-"contextid"="1"
+"contextid"="2"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext2\GB0]
 "Btn0"="2,41160"
@@ -8310,19 +8295,16 @@ REGEDIT4
 "Btn0"="2,41156"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext3]
-"contextid"="5"
+"contextid"="3"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext3\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext3\GB1]
 "Btn0"="2,40954"
-"Btn1"="2,41161"
-"Btn2"="2,41165"
-"Btn3"="2,41166"
-"Btn4"="2,41162"
-"Btn5"="2,41016"
-"Btn6"="2,41017"
+"Btn1"="2,41154"
+"Btn2"="2,41166"
+"Btn3"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext3\GB2]
 "Btn0"="2,41163"
@@ -8330,6 +8312,9 @@ REGEDIT4
 "Btn2"="2,41050"
 "Btn3"="3,41164"
 "Btn4"="3,40977"
+
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext3\GB3]
+"Btn0"="2,41156"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext4]
 "contextid"="4"
@@ -8349,16 +8334,19 @@ REGEDIT4
 "Btn0"="2,41152"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext5]
-"contextid"="3"
+"contextid"="5"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext5\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext5\GB1]
 "Btn0"="2,40954"
-"Btn1"="2,41154"
-"Btn2"="2,41166"
-"Btn3"="2,41162"
+"Btn1"="2,41161"
+"Btn2"="2,41165"
+"Btn3"="2,41166"
+"Btn4"="2,41162"
+"Btn5"="2,41016"
+"Btn6"="2,41017"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext5\GB2]
 "Btn0"="2,41163"
@@ -8367,17 +8355,16 @@ REGEDIT4
 "Btn3"="3,41164"
 "Btn4"="3,40977"
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext5\GB3]
-"Btn0"="2,41156"
-
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext6]
-"contextid"="7"
+"contextid"="6"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext6\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext6\GB1]
-"Btn0"="2,41162"
+"Btn0"="2,41166"
+"Btn1"="2,41016"
+"Btn2"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext6\GB2]
 "Btn0"="2,41163"
@@ -8386,19 +8373,14 @@ REGEDIT4
 "Btn3"="3,41164"
 "Btn4"="3,40977"
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext6\GB3]
-"Btn0"="2,41157"
-
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext7]
-"contextid"="6"
+"contextid"="7"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext7\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext7\GB1]
-"Btn0"="2,41166"
-"Btn1"="2,41016"
-"Btn2"="2,41162"
+"Btn0"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext7\GB2]
 "Btn0"="2,41163"
@@ -8407,14 +8389,23 @@ REGEDIT4
 "Btn3"="3,41164"
 "Btn4"="3,40977"
 
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext7\GB3]
+"Btn0"="2,41157"
+
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext8]
-"contextid"="9"
+"contextid"="8"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext8\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext8\GB1]
-"Btn0"="2,41162"
+"Btn0"="2,40954"
+"Btn1"="2,41161"
+"Btn2"="2,41165"
+"Btn3"="2,41166"
+"Btn4"="2,41162"
+"Btn5"="2,41016"
+"Btn6"="2,41017"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext8\GB2]
 "Btn0"="2,41163"
@@ -8424,19 +8415,13 @@ REGEDIT4
 "Btn4"="3,40977"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext9]
-"contextid"="8"
+"contextid"="9"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext9\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext9\GB1]
-"Btn0"="2,40954"
-"Btn1"="2,41161"
-"Btn2"="2,41165"
-"Btn3"="2,41166"
-"Btn4"="2,41162"
-"Btn5"="2,41016"
-"Btn6"="2,41017"
+"Btn0"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\AssyContext\Tab10\TabContext9\GB2]
 "Btn0"="2,41163"
@@ -9095,7 +9080,7 @@ REGEDIT4
 "Btn0"="2,41156"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext1]
-"contextid"="2"
+"contextid"="1"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext1\GB0]
 "Btn0"="2,41160"
@@ -9124,7 +9109,7 @@ REGEDIT4
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext2]
-"contextid"="1"
+"contextid"="2"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext2\GB0]
 "Btn0"="2,41160"
@@ -9147,19 +9132,16 @@ REGEDIT4
 "Btn0"="2,41156"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext3]
-"contextid"="5"
+"contextid"="3"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext3\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext3\GB1]
 "Btn0"="2,40954"
-"Btn1"="2,41161"
-"Btn2"="2,41165"
-"Btn3"="2,41166"
-"Btn4"="2,41162"
-"Btn5"="2,41016"
-"Btn6"="2,41017"
+"Btn1"="2,41154"
+"Btn2"="2,41166"
+"Btn3"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext3\GB2]
 "Btn0"="2,41163"
@@ -9167,6 +9149,9 @@ REGEDIT4
 "Btn2"="2,41050"
 "Btn3"="3,41164"
 "Btn4"="3,40977"
+
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext3\GB3]
+"Btn0"="2,41156"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext4]
 "contextid"="4"
@@ -9186,16 +9171,19 @@ REGEDIT4
 "Btn0"="2,41152"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext5]
-"contextid"="3"
+"contextid"="5"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext5\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext5\GB1]
 "Btn0"="2,40954"
-"Btn1"="2,41154"
-"Btn2"="2,41166"
-"Btn3"="2,41162"
+"Btn1"="2,41161"
+"Btn2"="2,41165"
+"Btn3"="2,41166"
+"Btn4"="2,41162"
+"Btn5"="2,41016"
+"Btn6"="2,41017"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext5\GB2]
 "Btn0"="2,41163"
@@ -9204,17 +9192,16 @@ REGEDIT4
 "Btn3"="3,41164"
 "Btn4"="3,40977"
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext5\GB3]
-"Btn0"="2,41156"
-
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext6]
-"contextid"="7"
+"contextid"="6"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext6\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext6\GB1]
-"Btn0"="2,41162"
+"Btn0"="2,41166"
+"Btn1"="2,41016"
+"Btn2"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext6\GB2]
 "Btn0"="2,41163"
@@ -9223,19 +9210,14 @@ REGEDIT4
 "Btn3"="3,41164"
 "Btn4"="3,40977"
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext6\GB3]
-"Btn0"="2,41157"
-
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext7]
-"contextid"="6"
+"contextid"="7"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext7\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext7\GB1]
-"Btn0"="2,41166"
-"Btn1"="2,41016"
-"Btn2"="2,41162"
+"Btn0"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext7\GB2]
 "Btn0"="2,41163"
@@ -9244,14 +9226,23 @@ REGEDIT4
 "Btn3"="3,41164"
 "Btn4"="3,40977"
 
+[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext7\GB3]
+"Btn0"="2,41157"
+
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext8]
-"contextid"="9"
+"contextid"="8"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext8\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext8\GB1]
-"Btn0"="2,41162"
+"Btn0"="2,40954"
+"Btn1"="2,41161"
+"Btn2"="2,41165"
+"Btn3"="2,41166"
+"Btn4"="2,41162"
+"Btn5"="2,41016"
+"Btn6"="2,41017"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext8\GB2]
 "Btn0"="2,41163"
@@ -9261,19 +9252,13 @@ REGEDIT4
 "Btn4"="3,40977"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext9]
-"contextid"="8"
+"contextid"="9"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext9\GB0]
 "Btn0"="2,41160"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext9\GB1]
-"Btn0"="2,40954"
-"Btn1"="2,41161"
-"Btn2"="2,41165"
-"Btn3"="2,41166"
-"Btn4"="2,41162"
-"Btn5"="2,41016"
-"Btn6"="2,41017"
+"Btn0"="2,41162"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\CommandManager\PartContext\Tab11\TabContext9\GB2]
 "Btn0"="2,41163"
@@ -9585,9 +9570,6 @@ REGEDIT4
 "Btn1"="2,59431"
 "Btn2"="2,59432"
 
-[HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\Custom API Flyouts]
-"Flyout Count"=dword:00000007
-
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\Custom API Toolbars]
 "ToolBar Count"=dword:ffffffff
 
@@ -9605,39 +9587,39 @@ REGEDIT4
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\Dialogs]
 "uiUnitsDimStdDlg_c"="0,1,-1,-1,-1,-1,488,350,788,614"
-"uiNewDocDlg_c"="0,1,-1,-1,-1,-1,294,64,893,451"
+"uiNewDocDlg_c"="0,1,-1,-1,-1,-1,294,64,893,454"
 "uiAddInDlg_c"="0,1,-1,-1,-1,-1,523,170,834,639"
 "uiInsertCompExistingDveDlg3_c"="0,1,-1,-1,-1,-1,0,0,186,510"
 "uiInsertCompExistingDveDlg3_copts"="dexps_7_prv_1_tfmexps_0_"
 "uiNamedViewDveDlg_c"="0,1,-1,-1,-1,-1,10,96,181,526"
 "uiNamedViewDveDlg_copts"="dexps_15359_"
-"uiDVEDefaultDialog_c"="0,1,-1,-1,-1,-1,0,0,185,60"
-"uiNamedViewDlg_c"="0,1,-1,-1,-1,-1,1152,893,1346,1165"
+"uiDVEDefaultDialog_c"="0,1,-1,-1,-1,-1,0,0,181,60"
+"uiNamedViewDlg_c"="0,1,-1,-1,-1,-1,538,715,732,987"
 "uiArcPropDlg_c"="0,1,-1,-1,-1,-1,0,0,212,497"
 "uiArcPropDlg_copts"="dexps_8342_tfmexps_0_"
-"uiSkRectangleProp_c"="0,1,-1,-1,-1,-1,0,0,200,766"
+"uiSkRectangleProp_c"="0,1,-1,-1,-1,-1,0,0,181,475"
 "uiSkRectangleProp_copts"="dexps_8342_tfmexps_0_"
 "uiDveSketchMessageDlg_c"="0,1,-1,-1,-1,-1,0,0,212,151"
 "uiDveSketchMessageDlg_copts"="dexps_1_tfmexps_0_"
 "uiDveEndSpecDlg_copts"="tfmexps_0_dexps_7410_"
-"uiDveEndSpecDlg_c"="0,1,-1,-1,-1,-1,0,0,212,460"
-"uiPreviewDlg_c"="0,1,-1,-1,-1,-1,0,0,212,71"
+"uiDveEndSpecDlg_c"="0,1,-1,-1,-1,-1,0,0,181,355"
+"uiPreviewDlg_c"="0,1,-1,-1,-1,-1,0,0,181,97"
 "uiPreviewDlg_copts"="dexps_2_"
 "uiComPropSkSegDlg_c"="0,1,-1,-1,-1,-1,0,0,204,422"
 "uiComPropSkSegDlg_copts"="tfmexps_0_dexps_118_"
-"uiLinePropDlg_c"="0,1,-1,-1,-1,-1,0,0,212,288"
-"uiLinePropDlg_copts"="dexps_55_tfmexps_0_"
+"uiLinePropDlg_c"="0,1,-1,-1,-1,-1,0,0,181,480"
+"uiLinePropDlg_copts"="dexps_87_tfmexps_0_"
 "uiSkPlaneDialog_c"="0,1,-1,-1,-1,-1,0,0,182,55"
 "uiSkPlaneDialog_copts"="tfmexps_0_dexps_34_"
 "CHTMLPopupWindow"="0,1,-1,-1,-1,-1,2228,1238,2488,1498"
 "ParentCFileDialog_MFC"="0,1,-1,-1,-1,-1,1,1,540,430"
 "uiComponentMateDlg_c"="0,1,-1,-1,-1,-1,0,0,876,1009"
 "mfcutAdvancedMessageBox_c"="0,1,-1,-1,-1,-1,1,1,480,148"
-"uiCustomizePropSheet_c"="0,1,-1,-1,-1,-1,336,144,985,819"
+"uiCustomizePropSheet_c"="0,1,-1,-1,-1,-1,336,144,985,826"
 "uiOptionsBase_c"="0,1,-1,-1,-1,-1,796,206,1658,966"
 "uiDveMoveCopyDlg_copts"="tfmexps_0_dexps_103_pin_0_operation_1_solvemove_0_copyents_0_relativemove_0_scale_1.000000_copycount_1_rotateaxisx_0.000000_rotateaxisy_0.000000_rotateaxisz_1.000000_"
 "uiDveMoveCopyDlg_c"="0,1,-1,-1,-1,-1,0,0,222,257"
-"uiDVEMultiDimPropPageValue_c"="0,1,-1,-1,-1,-1,0,0,212,547"
+"uiDVEMultiDimPropPageValue_c"="0,1,-1,-1,-1,-1,0,0,181,547"
 "uiDVEMultiDimPropPageValue_copts"="dexps_29867_tfmexps_0_"
 "uiDVEMultiDimPropPageLeaders_c"="0,1,-1,-1,-1,-1,0,0,200,359"
 "uiDVEMultiDimPropPageLeaders_copts"="dexps_9221_"
@@ -9865,7 +9847,7 @@ REGEDIT4
 "uiDveSpotLightProps_c"="0,1,-1,-1,-1,-1,0,0,190,672"
 "uiDveSpotLightProps_copts"="dexps_30_tfmexps_0_"
 "uiDvePVSpotLightProps_c"="0,1,-1,-1,-1,-1,0,0,190,340"
-"uiParamDlg"="0,1,-1,-1,-1,-1,1119,659,1311,789"
+"uiParamDlg"="0,1,-1,-1,-1,-1,634,1021,826,1141"
 "uiSculptFeatDlg_c"="0,1,-1,-1,-1,-1,0,0,196,528"
 "uiSculptFeatDlg_copts"="dexps_15_"
 "uiTrimRefSurfaceDlg_copts"="tfmexps_0_tt_0_ts_0_sa_0_no_0_dexps_14_"
@@ -9924,6 +9906,8 @@ REGEDIT4
 "uiMeasureOptionSelectorDlg_c"="0,1,-1,-1,-1,-1,81,54,315,495"
 "uiSectionMassPropDlg_c"="0,1,-1,-1,-1,-1,531,93,1012,833"
 "uiCheckEntityDlgSheet_c"="0,1,-1,-1,-1,-1,1086,590,1535,1007"
+"opticalPropsDlg_c"="0,1,-1,-1,-1,-1,0,0,166,580"
+"opticalPropsDlg_copts"="dexps_71_"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\General]
 "uiMainToolBar_c"=dword:00000000
@@ -10067,38 +10051,38 @@ REGEDIT4
 "Bar#2"=dword:00000000
 "Bar#3"=dword:0000e800
 "Bar#4"=dword:0000e89f
-"Bar#5"=dword:0000e819
-"Bar#6"=dword:0000e80c
-"Bar#7"=dword:0000e817
-"Bar#8"=dword:0000e811
-"Bar#9"=dword:00000000
-"Bar#10"=dword:0000e806
-"Bar#11"=dword:00000000
-"Bar#12"=dword:0001e816
-"Bar#13"=dword:00000000
-"Bar#14"=dword:0001e84f
-"Bar#15"=dword:00000000
-"Bar#16"=dword:0001e818
-"Bar#17"=dword:0001e813
-"Bar#18"=dword:0001e842
-"Bar#19"=dword:0001e814
-"Bar#20"=dword:00000000
-"Bar#21"=dword:0000e89e
-"Bar#22"=dword:00000000
-"Bar#23"=dword:0000e847
-"Bar#24"=dword:00000000
-"Bar#25"=dword:0000e84c
-"Bar#26"=dword:00000000
-"Bar#27"=dword:0001e855
-"Bar#28"=dword:00000000
-"Bar#29"=dword:0001e856
-"Bar#30"=dword:00000000
-"Bar#31"=dword:0001e857
-"Bar#32"=dword:00000000
-"Bar#33"=dword:0001e858
+"Bar#5"=dword:0000e80c
+"Bar#6"=dword:0000e817
+"Bar#7"=dword:0000e811
+"Bar#8"=dword:00000000
+"Bar#9"=dword:0000e806
+"Bar#10"=dword:00000000
+"Bar#11"=dword:0001e816
+"Bar#12"=dword:00000000
+"Bar#13"=dword:0001e84f
+"Bar#14"=dword:00000000
+"Bar#15"=dword:0001e818
+"Bar#16"=dword:0001e813
+"Bar#17"=dword:0001e842
+"Bar#18"=dword:0001e814
+"Bar#19"=dword:00000000
+"Bar#20"=dword:0000e89e
+"Bar#21"=dword:00000000
+"Bar#22"=dword:0000e847
+"Bar#23"=dword:00000000
+"Bar#24"=dword:0000e84c
+"Bar#25"=dword:00000000
+"Bar#26"=dword:0001e855
+"Bar#27"=dword:00000000
+"Bar#28"=dword:0001e856
+"Bar#29"=dword:00000000
+"Bar#30"=dword:0001e857
+"Bar#31"=dword:00000000
+"Bar#32"=dword:0001e858
+"Bar#33"=dword:00000000
 "Bar#34"=dword:00000000
-"Bar#35"=dword:00000000
-"Bar#36"=dword:0001e835
+"Bar#35"=dword:0001e835
+"Bar#36"=dword:00000000
 "Bar#37"=dword:00000000
 "Bar#38"=dword:00000000
 "Bar#39"=dword:00000000
@@ -10107,8 +10091,8 @@ REGEDIT4
 "Bar#42"=dword:00000000
 "Bar#43"=dword:00000000
 "Bar#44"=dword:00000000
-"Bar#45"=dword:00000000
-"Bar#46"=dword:0001e836
+"Bar#45"=dword:0001e836
+"Bar#46"=dword:00000000
 "Bar#47"=dword:00000000
 "Bar#48"=dword:00000000
 "Bar#49"=dword:00000000
@@ -10857,8 +10841,8 @@ REGEDIT4
 "Bar#792"=dword:00000000
 "Bar#793"=dword:00000000
 "Bar#794"=dword:00000000
-"Bar#795"=dword:00000000
-"Bar#796"=dword:0001e808
+"Bar#795"=dword:0001e808
+"Bar#796"=dword:00000000
 "Bar#797"=dword:00000000
 "Bar#798"=dword:00000000
 "Bar#799"=dword:00000000
@@ -13759,8 +13743,8 @@ REGEDIT4
 "Bar#3694"=dword:00000000
 "Bar#3695"=dword:00000000
 "Bar#3696"=dword:00000000
-"Bar#3697"=dword:00000000
-"Bar#3698"=dword:0000e834
+"Bar#3697"=dword:0000e834
+"Bar#3698"=dword:00000000
 "Bar#3699"=dword:00000000
 "Bar#3700"=dword:00000000
 "Bar#3701"=dword:00000000
@@ -14783,8 +14767,8 @@ REGEDIT4
 "Bar#4718"=dword:00000000
 "Bar#4719"=dword:00000000
 "Bar#4720"=dword:00000000
-"Bar#4721"=dword:00000000
-"Bar#4722"=dword:0001e83f
+"Bar#4721"=dword:0001e83f
+"Bar#4722"=dword:00000000
 "Bar#4723"=dword:00000000
 "Bar#4724"=dword:00000000
 "Bar#4725"=dword:00000000
@@ -15023,8 +15007,8 @@ REGEDIT4
 "Bar#4958"=dword:00000000
 "Bar#4959"=dword:00000000
 "Bar#4960"=dword:00000000
-"Bar#4961"=dword:00000000
-"Bar#4962"=dword:00002707
+"Bar#4961"=dword:00002707
+"Bar#4962"=dword:0000e819
 "Bar#4963"=dword:00000000
 "Bar#4964"=dword:0000e8a0
 "Bar#4965"=dword:00000000
@@ -15071,8 +15055,8 @@ REGEDIT4
 "BarID"=dword:0000e81f
 "Horz"=dword:00000001
 "Floating"=dword:00000001
-"XPos"=dword:00000444
-"YPos"=dword:00000235
+"XPos"=dword:0000044a
+"YPos"=dword:0000021b
 "Bars"=dword:00000003
 "Bar#0"=dword:00000000
 "Bar#1"=dword:0000e856
@@ -15137,8 +15121,8 @@ REGEDIT4
 "BarID"=dword:0000e81f
 "Horz"=dword:00000001
 "Floating"=dword:00000001
-"XPos"=dword:00000025
-"YPos"=dword:00000082
+"XPos"=dword:0000002b
+"YPos"=dword:00000068
 "Bars"=dword:00000003
 "Bar#0"=dword:00000000
 "Bar#1"=dword:0000e857
@@ -15353,14 +15337,14 @@ REGEDIT4
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\General-Bar21]
 "BarID"=dword:0000e819
 "Visible"=dword:00000000
-"XPos"=dword:fffffffe
+"XPos"=dword:000003ee
 "YPos"=dword:fffffffe
 "Docking"=dword:00000001
 "MRUDockID"=dword:0000e81b
-"MRUDockLeftPos"=dword:00000000
-"MRUDockTopPos"=dword:00000000
-"MRUDockRightPos"=dword:00000161
-"MRUDockBottomPos"=dword:00000021
+"MRUDockLeftPos"=dword:000003ee
+"MRUDockTopPos"=dword:fffffffe
+"MRUDockRightPos"=dword:0000054f
+"MRUDockBottomPos"=dword:0000001f
 "MRUFloatStyle"=dword:00002000
 "MRUFloatXPos"=dword:fffffffe
 "MRUFloatYPos"=dword:fffffffe
@@ -15774,8 +15758,8 @@ REGEDIT4
 "MRUDockRightPos"=dword:00000000
 "MRUDockBottomPos"=dword:00000000
 "MRUFloatStyle"=dword:00002000
-"MRUFloatXPos"=dword:ffffffff
-"MRUFloatYPos"=dword:ffffffff
+"MRUFloatXPos"=dword:80000000
+"MRUFloatYPos"=dword:80000000
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\General-Bar43]
 "BarID"=dword:0000e8a2
@@ -15789,8 +15773,8 @@ REGEDIT4
 "MRUDockRightPos"=dword:00000000
 "MRUDockBottomPos"=dword:00000000
 "MRUFloatStyle"=dword:00002000
-"MRUFloatXPos"=dword:ffffffff
-"MRUFloatYPos"=dword:ffffffff
+"MRUFloatXPos"=dword:80000000
+"MRUFloatYPos"=dword:80000000
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\General-Bar44]
 "BarID"=dword:0000e8a2
@@ -16121,7 +16105,7 @@ REGEDIT4
 "MRUDockID"=dword:00000000
 "MRUDockLeftPos"=dword:fffffffe
 "MRUDockTopPos"=dword:fffffffe
-"MRUDockRightPos"=dword:0000077e
+"MRUDockRightPos"=dword:000003f0
 "MRUDockBottomPos"=dword:0000004c
 "MRUFloatStyle"=dword:00002000
 "MRUFloatXPos"=dword:ffffffff
@@ -16420,8 +16404,8 @@ REGEDIT4
 "BarID"=dword:0000e81f
 "Horz"=dword:00000001
 "Floating"=dword:00000001
-"XPos"=dword:000002f2
-"YPos"=dword:00000300
+"XPos"=dword:00000302
+"YPos"=dword:0000025f
 "Bars"=dword:00000003
 "Bar#0"=dword:00000000
 "Bar#1"=dword:0000e858
@@ -16431,8 +16415,8 @@ REGEDIT4
 "BarID"=dword:0000e81f
 "Horz"=dword:00000001
 "Floating"=dword:00000001
-"XPos"=dword:00000333
-"YPos"=dword:0000021c
+"XPos"=dword:00000291
+"YPos"=dword:00000291
 "Bars"=dword:00000003
 "Bar#0"=dword:00000000
 "Bar#1"=dword:0000e855
@@ -16457,7 +16441,8 @@ REGEDIT4
 "Allow Per Document Keyboard Shortcuts"=dword:00000000
 "QuickPickBtnState"=dword:00000000
 "swCMgrMiniDockWnd_AutoCollaping"=dword:00000000
-"document1"="2,3,-1,-1,-8,-30,0,0,1720,1089,M:\\pc\\Desktop\\testpart.SLDPRT"
+"document1"="0,1,-1,-1,-8,-30,0,0,1845,1085,M:\\pc\\Desktop\\testpart.SLDPRT"
+"document2"="2,3,-1,-1,-8,-30,0,21,1845,1106,M:\\pc\\Desktop\\toe.SLDPRT"
 
 [HKEY_CURRENT_USER\Software\SolidWorks\SolidWorks 2013\User Interface\Settings\FullScreenViewMode]
 "AnimationPaneVisibility"=dword:00000001
@@ -17550,7 +17535,7 @@ REGEDIT4
 "uiSheetMetToolBar_c"=dword:00000000
 "uiAlignToolBar_c"=dword:00000000
 "uiMoldToolBar_c"=dword:00000000
-"uiToolsToolBar_c"=dword:00000000
+"uiToolsToolBar_c"=dword:00000001
 "uiAnnotationToolBar_c"=dword:00000000
 "uiDrawingToolBar_c"=dword:00000000
 "uiSkMainToolBar_c"=dword:00000000
