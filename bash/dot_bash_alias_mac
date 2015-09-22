@@ -1,0 +1,34 @@
+# Terminal commands
+alias l='ls -CF'
+alias ll='ls -alFh'
+alias la='ls -a'
+
+# Docker
+alias dps="docker ps"
+alias dstart="docker-start"
+alias drmi="echo 'Remove docker image';docker rmi"
+alias drmc="echo 'Remove docker container'; docker rm"
+alias "docker-start"='eval $(docker-machine env default)'
+
+# Shortcuts
+alias o='open .'
+alias cls='clear;'
+alias wow='git status'
+alias woww='cls wow'
+alias co='git checkout'
+#alias ifi='ssh -YC jarlefo@login.ifi.uio.no'
+#alias navet='ssh -YC navet@login.ifi.uio.no'
+alias duh='du -h -d 1'
+
+# Scripts
+alias uprint='~/Script/UiO/uprint.py'
+alias dagens='~/Script/UiO/dagens_ifi.py'
+
+# Applications
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias play21='~/Script/Dev/play_21_java7.sh'
+alias play22='~/Script/Dev/play_22_java7.sh'
+alias play='play21'
+alias adt='open Android\ Studio.app'
+alias adb='$ANDROID_HOME/platform-tools/adb'
+alias webAppCreator='~/Programs/gwt-2.7.0/webAppCreator'
