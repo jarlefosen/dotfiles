@@ -328,6 +328,8 @@ PACKAGE is installed and the current version is deleted."
 
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+(add-to-list 'auto-mode-alist '(".bash*" . sh-mode))
+
 ;; Use the [[http://www.levien.com/type/myfonts/inconsolata.html][Inconsolata]] font if it's installed on the system.
 
 (when (member "Inconsolata-g" (font-family-list))
