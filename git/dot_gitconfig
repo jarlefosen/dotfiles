@@ -1,12 +1,12 @@
 [core]
-	excludesfile = /Users/jarle/.gitignore_global
+        excludesfile = ~/.gitignore_global
 [user]
-	name = Jarle Fosen
-	email = jarlefosen@gmail.com
+        name = Jarle Fosen
+        email = jarlefosen@gmail.com
 [push]
-	default = current
+        default = current
 [alias]
-	d = diff
-	l = log --pretty=format:'%h : %ar : %an : %s'
+        d = diff
+        l = log --pretty=format:'%h : %ar : %an : %s'
         g = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	o = log --oneline
+        o = log --oneline
