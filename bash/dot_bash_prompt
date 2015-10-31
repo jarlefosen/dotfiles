@@ -1,0 +1,47 @@
+function PWD_LastTwo {
+    # Dir: "${USER}/* * " viser to siste directories
+    if echo "${PWD}" | grep "${USER}/" >> /dev/null
+    then
+        tmp=${PWD%/*/*};
+        [ ${#tmp} -gt 0 -a "$tmp" != "$PWD" ] && echo ${PWD:${#tmp}+1} || echo $PWD;
+
+        # Dir: "~/" viser kun hjemområdet "$USER"
+    elif echo "${PWD}" | grep "${USER}" >> /dev/null
+    then
+        tmp=${PWD%/*};
+        [ ${#tmp} -gt 0 -a "$tmp" != "$PWD" ] && echo ${PWD:${#tmp}+1} || echo $PWD;
+
+        # Dir: Før "/$USER", viser hele banen.
+    else
+        echo $PWD
+    fi
+}
+
+function get_git_branch {
+    return $(__git_ps1);
+}
+
+function prompt_layout {
+
+    EXITSTATUS="$?"
+    BOLD="\[\033[1m\]"
+    RED="\[\033[1;31m\]"
+    GREEN="\[\e[32;1m\]"
+    YELLOW="\[\e[0;33m\]"
+    BLUE="\[\e[34;1m\]"
+    PURPLE="\[\e[0;35m\]"
+    OFF="\[\033[m\]"
+
+    GIT_BRANCH=$(__git_ps1)
+    DIRS=$(PWD_LastTwo)
+
+    PROMPT="${PURPLE}\A ${GREEN}\u ${YELLOW}${DIRS} ${GREEN}${GIT_BRANCH}${OFF}"
+    #PROMPT="\A \u"
+
+    PS1="${PROMPT}\n${OFF}\$ "
+    PS2="${BOLD}>${OFF} "
+
+    update_terminal_cwd
+}
+
+PROMPT_COMMAND=prompt_layout
