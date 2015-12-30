@@ -32,3 +32,22 @@ alias play='play21'
 alias adt='open Android\ Studio.app'
 alias adb='$ANDROID_HOME/platform-tools/adb'
 alias webAppCreator='~/Programs/gwt-2.7.0/webAppCreator'
+alias letsencryptauto='~/dev/letsencrypt/letsencrypt/letsencrypt-auto'
+
+alias dcleanup='docker rmi $(docker images -q -f dangling=true)'
+
+function FIRE() {
+    echo "YOU CALLED FIRE!!!"
+    echo ""
+    echo "Pack up your stuff and leave ..."
+    echo "... wait! We're going to commit and push your stuff first!"
+    echo ""
+    echo ""
+    local emergency_branch="FIRE-$(date +%Y-%m-%d_%H-%M-%S)-$USER"
+    echo "Branch: $emergency_branch"
+    echo ""
+    git checkout -b $emergency_branch
+    git add .
+    git commit -m "WIP. Left because of fire."
+    git push origin $emergency_branch
+}
