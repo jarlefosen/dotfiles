@@ -41,7 +41,10 @@ function prompt_layout {
     PS1="${PROMPT}\n${OFF}\$ "
     PS2="${BOLD}>${OFF} "
 
-    update_terminal_cwd
+    if [ "$TERM_PROGRAM" == "Apple_Terminal" ]; then
+        update_terminal_cwd
+    fi
+
 }
 
 PROMPT_COMMAND=prompt_layout
