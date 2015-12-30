@@ -1,41 +1,33 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
+export JAVA_HOME_7="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/"
 export ANDROID_HOME=$HOME"/Programs/android-sdk-macosx"
 
+# Use emacs as default bash editor
 export EDITOR="emacs -nw"
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
-function PWD_LastTwo {
-# Dir: "${USER}/* * " viser to siste directories
-if echo "${PWD}" | grep "${USER}/" >> /dev/null
-then
-    tmp=${PWD%/*/*};
-    [ ${#tmp} -gt 0 -a "$tmp" != "$PWD" ] && echo ${PWD:${#tmp}+1} || echo $PWD;
+export PS1="\[\e[0;35m\][\A]\[\e[0;32m\][\u]\[\e[0;33m\] \w\[\e[1;30m\] \[\e[0m\]"
 
-# Dir: "~/" viser kun hjemområdet "$USER"
-elif echo "${PWD}" | grep "${USER}" >> /dev/null
-then
-    tmp=${PWD%/*};
-    [ ${#tmp} -gt 0 -a "$tmp" != "$PWD" ] && echo ${PWD:${#tmp}+1} || echo $PWD;
+BASH_PROMPT_FILE=$HOME'/.bash_prompt'
+BASH_ALIAS_FILE=$HOME'/.bash_alias'
+BASH_HEROKU_FILE=$HOME'/.heroku/plugins/heroku-bash-completion/heroku-completion.bash'
 
-# Dir: Før "/$USER", viser hele banen.
-else
-    echo $PWD
+#Source my ps1
+if [ -f $BASH_PROMPT_FILE ]; then
+    source $BASH_PROMPT_FILE
 fi
-}
-
-export PS1="\[\e[0;35m\][\A]\[\e[0;32m\][\u]\[\e[0;33m\] \$(PWD_LastTwo)\[\e[1;30m\] \[\e[0m\]"
 
 #Source my aliases
-source $HOME'/.bash_alias'
+if [ -f $BASH_ALIAS_FILE ]; then
+    source $BASH_ALIAS_FILE
+fi
 
-# The next line updates PATH for the Google Cloud SDK.
-source $HOME'/google-cloud-sdk/path.bash.inc'
-
-# The next line enables bash completion for gcloud.
-source '/Users/jarle/google-cloud-sdk/completion.bash.inc'
-source "/Users/jarle/.heroku/plugins/heroku-bash-completion/heroku-completion.bash"
+#Source heroku
+if [ -f $BASH_HEROKU_FILE ]; then
+    source $BASH_HEROKU_FILE
+fi
