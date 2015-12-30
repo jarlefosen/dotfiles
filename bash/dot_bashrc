@@ -154,6 +154,10 @@ alias play='/home/jarle/Programs/play-2.1.4/play'
 alias dotemacs='emacs ~/.emacs'
 alias bashrc='emacs ~/.bashrc'
 alias calc='gnome-calculator'
+alias wow='git status'
+
+# Prompt
+source $HOME'/.bash_prompt'
 
 # The next line updates PATH for the Google Cloud SDK.
 source /home/jarle/Programs/Google/google-cloud-sdk/path.bash.inc

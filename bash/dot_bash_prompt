@@ -44,7 +44,6 @@ function prompt_layout {
     if [ "$TERM_PROGRAM" == "Apple_Terminal" ]; then
         update_terminal_cwd
     fi
-
 }
 
 PROMPT_COMMAND=prompt_layout
