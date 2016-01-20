@@ -16,8 +16,6 @@ alias cls='clear;'
 alias wow='git status'
 alias woww='cls wow'
 alias co='git checkout'
-#alias ifi='ssh -YC jarlefo@login.ifi.uio.no'
-#alias navet='ssh -YC navet@login.ifi.uio.no'
 alias duh='du -h -d 1'
 
 # Scripts
