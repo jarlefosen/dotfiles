@@ -10,6 +10,12 @@ alias drmi="echo 'Remove docker image';docker rmi"
 alias drmc="echo 'Remove docker container'; docker rm"
 alias "docker-start"='eval $(docker-machine env default)'
 
+function dconnect() {
+    echo "Connecting docker-machine to $1"
+    eval $(docker-machine env $1)
+}
+
+
 # Shortcuts
 alias o='open .'
 alias cls='clear;'
@@ -23,7 +29,6 @@ alias uprint='~/Script/UiO/uprint.py'
 alias dagens='~/Script/UiO/dagens_ifi.py'
 
 # Applications
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias play21='~/Script/Dev/play_21_java7.sh'
 alias play22='~/Script/Dev/play_22_java7.sh'
 alias play='play21'
