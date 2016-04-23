@@ -1,7 +1,8 @@
 # Terminal commands
+alias ls='ls -G'
 alias l='ls -CF'
 alias ll='ls -alFh'
-alias la='ls -a'
+alias la='ls -aF'
 
 # Docker
 alias dps="docker ps"
@@ -15,18 +16,38 @@ function dconnect() {
     eval $(docker-machine env $1)
 }
 
+alias dcleanup='docker rmi $(docker images -q -f dangling=true)'
 
 # Shortcuts
 alias o='open .'
 alias cls='clear;'
 alias wow='git status'
 alias woww='cls wow'
-alias co='git checkout'
-alias duh='du -h -d 1'
+
+# Sort directories by size
+# optional -s sorts output by size
+function duh() {
+    local list_dirs="du -h -d 1"
+    local srt="sort -h"
+    local platform=$(uname)
+    local run=$list_dirs
+
+    if [ $platform == "Darwin" ]; then
+        srt="gsort -h"
+    else
+        srt="sort -h"
+    fi
+
+    if [ "$1" == "-s" ]; then
+        $list_dirs | $srt
+    else
+        $list_dirs
+    fi
+
+}
 
 # Scripts
-alias uprint='~/Script/UiO/uprint.py'
-alias dagens='~/Script/UiO/dagens_ifi.py'
+alias @='$HOME/dev/python/at/@.py'
 
 # Applications
 alias play21='~/Script/Dev/play_21_java7.sh'
@@ -34,10 +55,6 @@ alias play22='~/Script/Dev/play_22_java7.sh'
 alias play='play21'
 alias adt='open Android\ Studio.app'
 alias adb='$ANDROID_HOME/platform-tools/adb'
-alias webAppCreator='~/Programs/gwt-2.7.0/webAppCreator'
-alias letsencryptauto='~/dev/letsencrypt/letsencrypt/letsencrypt-auto'
-
-alias dcleanup='docker rmi $(docker images -q -f dangling=true)'
 
 function FIRE() {
     echo "YOU CALLED FIRE!!!"

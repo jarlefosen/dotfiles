@@ -25,7 +25,8 @@
                    flycheck
                    web-mode
                    js2-mode
-                   jsx-mode
+                   ac-js2
+                   json-mode
                    editorconfig
                    ))
        (packages (remove-if 'package-installed-p packages)))
@@ -38,9 +39,9 @@
   ;; add paredit-mode to all mode-hooks
   (add-hook (intern (concat (symbol-name mode) "-hook")) 'paredit-mode))
 
-(setq lisp-loop-forms-indentation   6
+(setq lisp-loop-forms-indentation   4
       lisp-simple-loop-indentation  2
-      lisp-loop-keyword-indentation 6)
+      lisp-loop-keyword-indentation 4)
 
 ;; Show files beneath
 (ido-vertical-mode 1)
@@ -54,6 +55,7 @@
 
 ;; load the default config of auto-complete
 (ac-config-default)
+(setq ac-ignore-case nil)
 
 ;; Your theme
 (custom-set-variables
@@ -74,6 +76,17 @@
  initial-scratch-message                 "" ; Removes default scratch text
  ring-bell-function                 'ignore ; Stop annoying system ringing noice
  word-wrap                                t ; Stop breaking lines splitting words
+
+ ;; Web mode style
+ web-mode-markup-indent-offset 2
+ web-mode-css-indent-offset    2
+ web-mode-code-indent-offset   2
+
+ ;; Js/Jsx-mode
+ js2-basic-offset 2
+ js2-strict-missing-semi-warning nil
+ sgml-basic-offset 2
+
  )
 
 (setq-default indent-tabs-mode nil) ; Use spaces instead of tabs
@@ -108,6 +121,50 @@ located.")
 ;; Adds closing parents automatically
 (electric-pair-mode 1)
 (add-to-list 'electric-pair-pairs '(?\{ . ?\}))
+
+;; Remove trailing whitespaces when saving files.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+;; Web development modes
+;;
+;; Enable globl flycheck mode
+(require 'flycheck)
+
+;; Prefer eslint to jshint
+(setq-default flycheck-disabled-checkers
+              (append flycheck-disabled-checkers
+                      '(javascript-jshint)))
+
+;; Use eslint with js2-mode
+(flycheck-add-mode 'javascript-eslint 'js2-mode)
+(add-hook 'js2-mode-hook 'flycheck-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+
+;; Customize flycheck temp file prefix
+(setq-default flycheck-temp-prefix ".flycheck")
+
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disable-checkers
+              (append flycheck-disabled-checkers
+                      '(json-jsonlist)))
+
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+
+;; for better jsx syntax-highlighting in web-mode
+;; - courtesy of Patrick @halbtuerke
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
+
+;; EditorConfig setup
+(require 'editorconfig)
+;; Enable editorconfig by default
+(editorconfig-mode 1)
 
 ;; Answer yes or no with y or n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -218,10 +275,6 @@ located.")
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-;; Remove trailing whitespaces when saving files.
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,7 +1,10 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
+
 export JAVA_HOME_7="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/"
+export JAVA_HOME_8="/Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home"
+export JAVA_HOME=$JAVA_HOME_7
+
 export ANDROID_HOME=$HOME"/Programs/android-sdk-macosx"
 
 # Use emacs as default bash editor
