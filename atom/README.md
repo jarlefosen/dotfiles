@@ -23,15 +23,13 @@ $ apm install --packages-file package-list.txt
 *Don't overwrite current settings*
 
 ```sh
-$ ln -s *.coffee ~/.atom/
-$ ln -s *.cson ~/.atom/
+$ ln -s *.cson *.coffee ~/.atom/
 ```
 
  *Will probably overwrite current settings*
 
 ```sh
-$ ln -sf *.coffee ~/.atom/
-$ ln -sf *.cson ~/.atom/
+$ ln -sf *.cson *.coffee ~/.atom/
 ```
 
 That's it. Enjoy.
