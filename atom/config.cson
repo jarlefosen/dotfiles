@@ -1,0 +1,28 @@
+"*":
+  "autoclose-html": {}
+  core:
+    allowPendingPaneItems: false
+    disabledPackages: [
+      "color-picker"
+      "autoclose-html"
+      "language-go"
+      "language-csharp"
+      "language-objective-c"
+      "language-php"
+      "metrics"
+      "welcome"
+      "atomic-emacs"
+      "exception-reporting"
+    ]
+    excludeVcsIgnoredPaths: false
+    projectHome: "/Users/jarle/dev"
+  editor:
+    invisibles: {}
+    scrollPastEnd: true
+    softWrap: true
+  linter: {}
+  "one-dark-ui": {}
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false

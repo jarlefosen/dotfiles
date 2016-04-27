@@ -1,0 +1,11 @@
+advanced-open-file@0.16.2
+atomic-emacs@0.9.1
+autoclose-html@0.23.0
+color-picker@2.1.1
+emacs-flow@0.1.2
+linter@1.11.4
+merge-conflicts@1.4.2
+polymer-snippets@3.1.0
+react@0.15.0
+
+
