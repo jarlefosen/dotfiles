@@ -28,6 +28,7 @@
                    ac-js2
                    json-mode
                    editorconfig
+                   coffee-mode
                    ))
        (packages (remove-if 'package-installed-p packages)))
   (when packages
