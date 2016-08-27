@@ -6,7 +6,8 @@
   'ctrl-x b': 'fuzzy-finder:toggle-buffer-finder'
   # find resource (Eclipse like)
   'ctrl-shift-t': 'application:open-file'
-  'ctrl-x ctrl-f': 'advanced-open-file:toggle' #'fuzzy-finder:toggle-file-finder'
+  'ctrl-x f': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-x ctrl-f': 'advanced-open-file:toggle'
   'ctrl-x ctrl-n': 'tree-view:add'
   'ctrl-x ctrl-d': 'application:open-folder'
   'ctrl-g': 'core:cancel'
@@ -104,7 +105,9 @@
   'ctrl-e': 'editor:move-to-end-of-screen-line'
 
 'atom-text-editor':
-  'ctrl-tab': 'custom:reformat'
+  'tab': 'unset!'
+  'tab': 'editor:indent-selected-rows'
+  'ctrl-tab': 'atom-beautify:beautify-editor'
 
 '.find-and-replace':
   'ctrl-s': 'find-and-replace:find-next'
