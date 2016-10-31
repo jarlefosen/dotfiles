@@ -27,6 +27,8 @@
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
     tabType: "soft"
+  "go-plus":
+    panelDisplayMode: "closed"
   linter: {}
   "one-dark-ui": {}
   welcome:
