@@ -10,3 +10,5 @@
         l = log --pretty=format:'%h : %ar : %an : %s'
         g = log --graph --decorate --pretty=oneline --abbrev-commit --all
         o = log --oneline
+[pull]
+	default = simple

@@ -17,18 +17,26 @@
                    exec-path-from-shell
                    ido-vertical-mode
                    markdown-mode
-                   monokai-theme
+                  ;monokai-theme
+                   atom-one-dark-theme
                    multiple-cursors
                    paredit
                    pretty-lambdada
                    undo-tree
+                   try
                    flycheck
+                   flyspell
+                   haskell-mode
                    web-mode
                    js2-mode
                    ac-js2
                    json-mode
                    editorconfig
                    coffee-mode
+                   jade-mode
+                   dockerfile-mode
+                   solarized-theme
+                   yaml-mode
                    ))
        (packages (remove-if 'package-installed-p packages)))
   (when packages
@@ -64,9 +72,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (tango-dark)))
+ '(custom-enabled-themes (quote (solarized-dark)))
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(indent-tabs-mode nil)
- '(js-indent-level 2))
+ '(js-indent-level 2)
+ '(package-selected-packages
+   (quote
+    (groovy-mode w3 markdown-mode+ ox-gfm go-mode shared-buffer yaml-mode web-mode undo-tree tss try slime pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode magit jsx-mode jade-mode ido-vertical-mode haskell-mode geiser focus flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode atom-one-dark-theme ac-js2))))
 
 (setq
  auto-save-default                        t ; nil to disable auto-save
@@ -107,6 +121,29 @@ located.")
       `((".*" ,emacs-autosave-directory t)))
 
 
+(require 'markdown-mode)
+
+(setq my-markdown-gfm-command "/usr/local/bin/marked")
+(setq my-markdown-command "/usr/local/bin/markdown")
+
+(cond
+ ((file-exists-p my-markdown-gfm-command)
+  (setq markdown-command my-markdown-gfm-command)
+  (setq markdown-command-needs-filename t))
+ ((file-exists-p my-markdown-command)
+  (setq markdown-command my-markdown-command)))
+
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+
+(add-hook 'visual-line-mode-hook
+	  '(lambda()
+	     (setq word-wrap nil)))
+
+(add-hook 'gfm-mode-hook
+ 	  '(lambda()
+	     (setq indent-tabs-mode nil)
+	     (setq tab-width 4)))
+
 ;; Basic looks
 (blink-cursor-mode 0)  ; Self explainatory
 (column-number-mode 1) ; Shows column number at the bottom
@@ -127,6 +164,10 @@ located.")
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
+;; Correctly handle hanging indentation
+(defun hanging-indentation-mode ()
+      (c-set-offset 'arglist-intro '+))
+
 ;; Web development modes
 ;;
 ;; Enable globl flycheck mode
@@ -141,6 +182,7 @@ located.")
 (flycheck-add-mode 'javascript-eslint 'js2-mode)
 (add-hook 'js2-mode-hook 'flycheck-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
+(add-hook 'js2-mode-hook 'hanging-indentation-mode)
 
 ;; Customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -152,10 +194,13 @@ located.")
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
-
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . web-mode))
+
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+
+;; Docker
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 ;; for better jsx syntax-highlighting in web-mode
 ;; - courtesy of Patrick @halbtuerke
