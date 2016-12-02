@@ -68,8 +68,12 @@
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
+ '(global-auto-revert-mode nil)
  '(indent-tabs-mode nil)
- '(js-indent-level 2))
+ '(js-indent-level 2)
+ '(package-selected-packages
+   (quote
+    (yaml-mode web-mode undo-tree try terraform-mode solarized-theme pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode json-mode ido-vertical-mode groovy-mode go-mode flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode clojure-mode auto-complete ac-js2))))
 
 (setq
  auto-save-default                        t ; nil to disable auto-save

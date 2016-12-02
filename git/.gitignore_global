@@ -64,3 +64,4 @@ project/project
 project/target
 target
 activator-*.sbt
+yarn.lock
