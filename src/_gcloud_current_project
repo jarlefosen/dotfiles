@@ -1,0 +1,8 @@
+#!/bin/sh
+
+_gcloud_active_config="config_$(cat $HOME/.config/gcloud/active_config)"
+_gcloud_config_file="$HOME/.config/gcloud/configurations/$_gcloud_active_config"
+_config_content="$(cat $_gcloud_config_file | grep project)"
+_gcloud_active_project="${_config_content#*project = }"
+
+echo $_gcloud_active_project

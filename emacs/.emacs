@@ -27,22 +27,32 @@
                    js2-mode
                    ac-js2
                    json-mode
+                   gradle-mode
+                   groovy-mode
                    editorconfig
                    coffee-mode
+                   solarized-theme
+                   clojure-mode
+                   cider ;; REPL for Clojure in Emacs
+                   try
+                   go-mode
+                   go-autocomplete
                    ))
        (packages (remove-if 'package-installed-p packages)))
   (when packages
     (package-refresh-contents)
     (mapc 'package-install packages)))
 
+
+
 ;; Paredit
 (dolist (mode pretty-lambda-auto-modes)
   ;; add paredit-mode to all mode-hooks
   (add-hook (intern (concat (symbol-name mode) "-hook")) 'paredit-mode))
 
-(setq lisp-loop-forms-indentation   4
+(setq lisp-loop-forms-indentation   2
       lisp-simple-loop-indentation  2
-      lisp-loop-keyword-indentation 4)
+      lisp-loop-keyword-indentation 2)
 
 ;; Show files beneath
 (ido-vertical-mode 1)
@@ -58,22 +68,44 @@
 (ac-config-default)
 (setq ac-ignore-case nil)
 
-;; Your theme
+
+
+; Your theme
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(clojure-indent-style :always-indent)
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
  '(global-auto-revert-mode nil)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode undo-tree try terraform-mode solarized-theme pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode json-mode ido-vertical-mode groovy-mode go-mode flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode clojure-mode auto-complete ac-js2))))
+    (cypher-mode graphql-mode go-autocomplete gradle-mode 2048-game cider yaml-mode web-mode undo-tree try terraform-mode solarized-theme pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode json-mode ido-vertical-mode groovy-mode go-mode flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode clojure-mode auto-complete ac-js2)))
+ '(tab-width 4))
+
+(if (not window-system)
+    (custom-set-variables
+     '(custom-enabled-themes (quote nil))))
+
+(defun toggle-theme ()
+  "Toggles between solarized-dark and solarized-light theme"
+  (interactive)
+  (let ((preferred-dark '(solarized-dark))
+        (preferred-light '(solarized-light)))
+    (if (equalp preferred-dark custom-enabled-themes)
+        (custom-set-variables '(custom-enabled-themes preferred-light))
+      (custom-set-variables '(custom-enabled-themes preferred-dark)))))
+
+(defun rev ()
+  "Revert buffer alias"
+  (interactive)
+  (revert-buffer))
 
 (setq
  auto-save-default                        t ; nil to disable auto-save
@@ -84,6 +116,8 @@
  initial-scratch-message                 "" ; Removes default scratch text
  ring-bell-function                 'ignore ; Stop annoying system ringing noice
  word-wrap                                t ; Stop breaking lines splitting words
+ org-support-shift-select                 t ; Enable org-mode shift select
+ window-resize-pixelwise                  t ; Enable pixelwise window resizing
 
  ;; Web mode style
  web-mode-markup-indent-offset 2
@@ -93,6 +127,7 @@
  ;; Js/Jsx-mode
  js2-basic-offset 2
  js2-strict-missing-semi-warning nil
+ js2-strict-trailing-comma-warning nil
  sgml-basic-offset 2
 
  )
@@ -121,7 +156,7 @@ located.")
 (show-paren-mode 1)    ; Marks matching paranthesis
 
 ;; Less toolbars, more text. We have shortcuts
-(menu-bar-mode 0)      ; Hide menu
+(menu-bar-mode 1)      ; Hide menu
 (tool-bar-mode 0)      ; Hide toolbar
 (scroll-bar-mode 0)    ; Hide scrollbar
 
@@ -132,7 +167,6 @@ located.")
 
 ;; Remove trailing whitespaces when saving files.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 
 ;; Web development modes
 ;;
@@ -157,12 +191,21 @@ located.")
               (append flycheck-disabled-checkers
                       '(json-jsonlist)))
 
+(add-to-list 'auto-mode-alist '(".sh-" . sh-mode))
+(add-to-list 'auto-mode-alist '(".sh\\'" . sh-mode))
+(add-to-list 'auto-mode-alist '(".bash" . sh-mode))
+(add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))
+(add-to-list 'auto-mode-alist '("\\.dockerfile\\'" . dockerfile-mode))
+
+
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
 
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . web-mode))
+
+;(add-to-list 'auto-mode-alist '(".go" . go-mode))
 
 ;; for better jsx syntax-highlighting in web-mode
 ;; - courtesy of Patrick @halbtuerke
@@ -202,6 +245,14 @@ located.")
   (interactive)
   (find-file "~/.emacs"))
 
+(defun godev ()
+  (interactive)
+  (find-file "~/dev/go/src"))
+
+(defun docs ()
+  (interactive)
+  (find-file "~/Documents"))
+
 ;; Change focus between windows in emacs with Alt-left and Alt-right
 (defun select-next-window ()
   "Switch to the next window"
@@ -212,7 +263,6 @@ located.")
   "Switch to the previous window"
   (interactive)
   (select-window (previous-window)))
-
 
 ;; To tidy up a buffer we define this function borrowed from simenheg
 (defun tidy ()
@@ -301,3 +351,58 @@ located.")
         mac-command-modifier 'meta
         x-select-enable-clipboard t)
   (exec-path-from-shell-initialize))
+
+
+;; GOLANG setup ;;
+
+;; Read environment variables from system
+(defun get-env-from-system (var)
+  (replace-regexp-in-string
+   "[ \t\n]*$"
+   ""
+   (shell-command-to-string (concat "$SHELL --login -i -c 'echo $" var "'"))))
+
+;; Copies environment variable from System to Emacs
+;; E.g. (set-env-from-system "PATH") and you will be able to read it with (getenv "PATH")
+(defun set-env-from-system (var)
+  (setenv var (get-env-from-system var)))
+
+;; Reference $PATH
+(defun set-exec-path-from-shell-PATH ()
+  (progn
+    (set-env-from-system "PATH")))
+
+(defun transform-gopath-to-gopath-bin (path . stuff)
+  (concat path "/bin"))
+
+(when window-system
+  (progn
+    ;; Setup PATH
+    ;;(set-env-from-system "PATH")
+    ;; Has been set from exec-path-from-shell-initialize - no need to run the below
+    ;;(setq exec-path (split-string (getenv "PATH") path-separator))
+    (set-env-from-system "GOPATH")
+    (mapcar (lambda (arg) (add-to-list 'exec-path arg))
+            (mapcar (lambda (arg) (concat arg "/bin"))
+                    (split-string (getenv "GOPATH") path-separator)))
+    ))
+
+(defun my-go-mode-hook ()
+  ;; Use auto-import and gofmt
+  (setq gofmt-command "goimports")
+  ;; Call Gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  ;; Autocomplete
+  (auto-complete-mode 1)
+  ;; Godef jump key binding
+  (local-set-key (kbd "M-.") 'godef-jump)
+  (local-set-key (kbd "M-,") 'pop-tag-mark)
+  )
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+(set-env-from-system "GOLIBS")
+(add-to-list 'load-path (concat (getenv "GOLIBS")  "/src/github.com/golang/lint/misc/emacs"))
+
+(with-eval-after-load 'go-mode
+  (require 'go-autocomplete)
+  (require 'golint))
