@@ -1,0 +1,111 @@
+#!/bin/bash
+
+
+_usage() {
+    echo "Kubernetes Container Engine - Current Context"
+    echo ""
+    echo "Usage:"
+    echo "  _kube_current_context raw"
+    echo "  _kube_current_context [all [DELIMITER]]"
+    echo "  _kube_current_context format PROPS [DELIMITER]"
+    echo "  _kube_current_context PROP"
+    echo ""
+    echo "Options:"
+    echo "PROP       Single property (name|region|project|provider) [default:all]"
+    echo "PROPS      Space delimited string of properties"
+    echo "DELIMITER  Single character for separating multi-value returns [default:\" \"]"
+    echo ""
+    echo "Example:"
+    echo "  $ _kube_current_context format \"name project\" \".\""
+    echo "  > cluster-name.my-project"
+}
+
+
+_kube_config_file="$HOME/.kube/config"
+_kube_current_context_line=$(cat $_kube_config_file | grep current-context)
+_kube_context="${_kube_current_context_line#*current-context: }"
+_DEFAULT_DELIMITER=" "
+
+_trim_whitespace() {
+    echo "$1" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
+}
+
+_context_raw() {
+    echo "$_kube_context"
+}
+
+_cluster_provider() {
+    echo $(_context_raw) | cut -d "_" -f 1
+}
+
+_cluster_project() {
+    echo $(_context_raw) | cut -d "_" -f 2
+}
+
+_cluster_region() {
+    echo $(_context_raw) | cut -d "_" -f 3
+}
+
+_cluster_name() {
+    echo $(_context_raw)| cut -d "_" -f 4
+}
+
+_context_namespace() {
+    ns="$(echo $(cat $_kube_config_file | grep $(_cluster_project) -A5 | grep namespace | cut -d':' -f2 | tr -d ' ')| cut -d "_" -f 4)"
+    echo ${ns:-"default"}
+}
+
+_context_part() {
+    case "$1" in
+    "provider"*)
+        _cluster_provider
+        ;;
+    "project"*)
+        _cluster_project
+        ;;
+    "region"*)
+        _cluster_region
+        ;;
+    "namespace"*)
+        _context_namespace
+        ;;
+    "name"*)
+        _cluster_name
+        ;;
+    "raw"*)
+        _context_raw
+        ;;
+    esac
+}
+
+_context_format() {
+    local _format="${1:-raw}"
+    local _delimiter="${2:-$_DEFAULT_DELIMITER}"
+    _context_builder=""
+    for _key in $(echo $_format | xargs -n1); do
+        local _val=$(_context_part $_key)
+        [[ -n $_val ]] && _context_builder="$_context_builder $_val"
+    done
+    echo $(_trim_whitespace "$_context_builder") | tr " " "$_delimiter"
+}
+
+_process_arguments() {
+    _cmd="${1:-raw}"
+
+    case $_cmd in
+        "all"*)
+            _context_format "provider project region name" "$2"
+            ;;
+        "format"*)
+            _context_format "${@:2}"
+            ;;
+        "-h"*|"--help"*|"help"*)
+            _usage
+            ;;
+        *)
+            _context_part "${@}"
+            ;;
+    esac
+}
+
+_process_arguments "${@}"

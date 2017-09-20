@@ -70,7 +70,7 @@
 
 
 
-; Your theme
+;; Your theme
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -101,6 +101,11 @@
     (if (equalp preferred-dark custom-enabled-themes)
         (custom-set-variables '(custom-enabled-themes preferred-light))
       (custom-set-variables '(custom-enabled-themes preferred-dark)))))
+
+(defun tt ()
+  "Simplifies toggling themes between dark and light"
+  (interactive)
+  (toggle-theme))
 
 (defun rev ()
   "Revert buffer alias"
@@ -205,8 +210,6 @@ located.")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . web-mode))
 
-;(add-to-list 'auto-mode-alist '(".go" . go-mode))
-
 ;; for better jsx syntax-highlighting in web-mode
 ;; - courtesy of Patrick @halbtuerke
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
@@ -310,11 +313,11 @@ located.")
 
 
 ;; Scrolling
-(defun scroll-opp()
+(defun pan-up()
   (interactive)
   (scroll-down 4))
 
-(defun scroll-ned()
+(defun pan-down()
   (interactive)
   (scroll-up 4))
 
@@ -331,8 +334,8 @@ located.")
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "M-2") 'select-next-window)
 (global-set-key (kbd "M-1")  'select-previous-window)
-(global-set-key (kbd "M-n") 'scroll-ned)
-(global-set-key (kbd "M-p") 'scroll-opp)
+(global-set-key (kbd "M-n") 'pan-down)
+(global-set-key (kbd "M-p") 'pan-up)
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 
@@ -349,6 +352,7 @@ located.")
   (setq ns-pop-up-frames nil
         mac-option-modifier nil
         mac-command-modifier 'meta
+        mac-allow-anti-aliasing 't
         x-select-enable-clipboard t)
   (exec-path-from-shell-initialize))
 
@@ -367,27 +371,16 @@ located.")
 (defun set-env-from-system (var)
   (setenv var (get-env-from-system var)))
 
-;; Reference $PATH
-(defun set-exec-path-from-shell-PATH ()
-  (progn
-    (set-env-from-system "PATH")))
-
-(defun transform-gopath-to-gopath-bin (path . stuff)
-  (concat path "/bin"))
-
+;; Go specific environment
 (when window-system
   (progn
-    ;; Setup PATH
-    ;;(set-env-from-system "PATH")
-    ;; Has been set from exec-path-from-shell-initialize - no need to run the below
-    ;;(setq exec-path (split-string (getenv "PATH") path-separator))
     (set-env-from-system "GOPATH")
     (mapcar (lambda (arg) (add-to-list 'exec-path arg))
             (mapcar (lambda (arg) (concat arg "/bin"))
                     (split-string (getenv "GOPATH") path-separator)))
     ))
 
-(defun my-go-mode-hook ()
+(defun custom-go-mode-hook ()
   ;; Use auto-import and gofmt
   (setq gofmt-command "goimports")
   ;; Call Gofmt before saving
@@ -398,7 +391,8 @@ located.")
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "M-,") 'pop-tag-mark)
   )
-(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+(add-hook 'go-mode-hook 'custom-go-mode-hook)
 
 (set-env-from-system "GOLIBS")
 (add-to-list 'load-path (concat (getenv "GOLIBS")  "/src/github.com/golang/lint/misc/emacs"))
