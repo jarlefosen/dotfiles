@@ -17,24 +17,21 @@
                    exec-path-from-shell
                    ido-vertical-mode
                    markdown-mode
-                   monokai-theme
                    multiple-cursors
                    paredit
-                   pretty-lambdada
                    undo-tree
                    flycheck
                    web-mode
                    js2-mode
                    ac-js2
+                   rjsx-mode
                    json-mode
                    gradle-mode
-                   groovy-mode
                    editorconfig
                    coffee-mode
                    solarized-theme
                    clojure-mode
                    cider ;; REPL for Clojure in Emacs
-                   try
                    go-mode
                    go-autocomplete
                    ))
@@ -86,7 +83,7 @@
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (cypher-mode graphql-mode go-autocomplete gradle-mode 2048-game cider yaml-mode web-mode undo-tree try terraform-mode solarized-theme pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode json-mode ido-vertical-mode groovy-mode go-mode flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode clojure-mode auto-complete ac-js2)))
+    (rjsx-mode restclient go-errcheck go-complete cypher-mode graphql-mode go-autocomplete gradle-mode 2048-game cider yaml-mode web-mode undo-tree try terraform-mode solarized-theme pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode json-mode ido-vertical-mode groovy-mode go-mode flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode clojure-mode auto-complete ac-js2)))
  '(tab-width 4))
 
 (if (not window-system)
@@ -184,9 +181,13 @@ located.")
                       '(javascript-jshint)))
 
 ;; Use eslint with js2-mode
-(flycheck-add-mode 'javascript-eslint 'js2-mode)
-(add-hook 'js2-mode-hook 'flycheck-mode)
-(add-hook 'js2-mode-hook 'ac-js2-mode)
+;;(flycheck-add-mode 'javascript-eslint 'js2-mode)
+;;(add-hook 'js2-mode-hook 'flycheck-mode)
+;;(add-hook 'js2-mode-hook 'ac-js2-mode)
+
+(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
+(add-hook 'rjsx-mode-hook 'flycheck-mode)
+(add-hook 'rjsx-mode-hook 'ac-js2-mode)
 
 ;; Customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -203,20 +204,17 @@ located.")
 (add-to-list 'auto-mode-alist '("\\.dockerfile\\'" . dockerfile-mode))
 
 
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+;;(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+;;(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
+
+(add-to-list 'interpreter-mode-alist '("node" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . web-mode))
 
-;; for better jsx syntax-highlighting in web-mode
-;; - courtesy of Patrick @halbtuerke
-(defadvice web-mode-highlight-part (around tweak-jsx activate)
-  (if (equal web-mode-content-type "jsx")
-      (let ((web-mode-enable-part-face nil))
-        ad-do-it)
-    ad-do-it))
 
 ;; EditorConfig setup
 (require 'editorconfig)
@@ -250,13 +248,13 @@ located.")
 
 (defun godev ()
   (interactive)
-  (find-file "~/dev/go/src"))
+  (find-file "~/dev/go/src/"))
 
 (defun docs ()
   (interactive)
   (find-file "~/Documents"))
 
-;; Change focus between windows in emacs with Alt-left and Alt-right
+;; Change focus between windows in emacs
 (defun select-next-window ()
   "Switch to the next window"
   (interactive)
@@ -276,15 +274,6 @@ located.")
     (indent-region beg end)
     (whitespace-cleanup)
     (untabify beg (if (< end (point-max)) end (point-max)))))
-
-
-;; Opens a shell in the next window
-(defun open-shell ()
-  (interactive)
-  (select-window (next-window))
-  (shell)
-  (select-window (previous-window)))
-
 
 ;; Kill process and buffer
 (defun kill-shell ()
@@ -374,6 +363,7 @@ located.")
 ;; Go specific environment
 (when window-system
   (progn
+    (set-env-from-system "PATH")
     (set-env-from-system "GOPATH")
     (mapcar (lambda (arg) (add-to-list 'exec-path arg))
             (mapcar (lambda (arg) (concat arg "/bin"))

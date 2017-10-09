@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Java
+export JAVA_HOME_8="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home"
+export JAVA_HOME=$JAVA_HOME_8
+
+# Android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/tools
+
+# Go
+export GOLIBS="$HOME/.golibs"
+export GODEV="$HOME/dev/go"
+export GOPATH="$GOLIBS:$GODEV"
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH=$PATH:$GODEV/bin:$GOLIBS/bin:$GOROOT/bin
+
+# Yarn
+export YARNPATH="$HOME/.yarn"
+export PATH=$PATH:$YARNPATH/bin
+
+# Gcloud
+export GCLOUD_SDK_HOME="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
+export PATH=$PATH:$GCLOUD_SDK_HOME"/bin"
+
+# Misc
+export SCRAPPY_SCRIPTS_SRC="$HOME/dev/unacast/scrappy-scripts/src"
+export SCRAPPY_SCRIPTS_BIN="$HOME/dev/unacast/scrappy-scripts/bin"
+export JARLE_SCRIPTS="$HOME/dev/dotfiles/src"
+export VSCODE_BIN="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH=$PATH:$SCRAPPY_SCRIPTS_SRC:$SCRAPPY_SCRIPTS_BIN:$JARLE_SCRIPTS:$VSCODE_BIN

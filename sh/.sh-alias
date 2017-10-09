@@ -1,3 +1,5 @@
+#!/bin/bash
+
 _sh_source="$0"
 _dir="$( cd -P "$( dirname "$_sh_source" )" && pwd )"
 _src="$_dir/src"
