@@ -5,6 +5,8 @@
         email = jarlefosen@gmail.com
 [push]
         default = current
+[pager]
+        branch = false
 [alias]
         d = diff
         b = branch -v
