@@ -13,7 +13,6 @@ alias la='ls -aF'
 
 # Docker
 alias dcleanup='([ -z "$(docker images -q -f dangling=true)" ] && echo "No dangling images") || (echo "Removing dangling images" && docker rmi $(docker images -q -f dangling=true))'
-#alias dcleanup '[ -z "$(docker images -q -f dangling=true)" ] || docker rmi "$(docker images -q -f dangling=true)"'
 
 # Shortcuts
 alias o='open .'
@@ -50,6 +49,15 @@ function git_time_since_last_commit() {
   git log -1 --pretty=format:"%ar" | sed 's/\([0-9]*\) \(.\).*/\1\2/'
 }
 
+# Remove all branches that are merged into "master"
+function gitclean() {
+    for b in $(git branch --merged master | grep -v '\(^\*\)\|\(master\)');
+    do
+        git branch -d $b
+    done
+}
+
+
 # Applications
 alias adb='$ANDROID_HOME/platform-tools/adb'
 
@@ -61,3 +69,5 @@ alias curr="uc-current-env"
 alias curc="uc-current-cluster"
 alias switch="uc-switch-env"
 alias s3="aws s3"
+alias ugo="cd ${GOPATH##*:}/src/github.com/unacast/"
+alias gog="cd ${GOPATH##*:}/src/github.com/"

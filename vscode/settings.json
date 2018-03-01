@@ -1,0 +1,16 @@
+{
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2,
+    "editor.quickSuggestionsDelay": 100,
+    "files.trimTrailingWhitespace": true,
+    "editor.minimap.enabled": false,
+    "javascript.implicitProjectConfig.checkJs": true,
+    "files.trimFinalNewlines": true,
+    "editor.multiCursorModifier": "alt",
+    "workbench.editor.enablePreview": false,
+    "extensions.ignoreRecommendations": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 12,
+    "files.insertFinalNewline": true
+}

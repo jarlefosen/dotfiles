@@ -13,34 +13,37 @@
         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; install some packages if missing
-(let* ((packages '(auto-complete
+(let* ((packages '(ac-js2
+                   auto-complete
+                   cider ;; REPL for Clojure in Emacs
+                   clojure-mode
+                   coffee-mode
+                   editorconfig
                    exec-path-from-shell
+                   flycheck
+                   go-autocomplete
+                   go-eldoc
+                   go-mode
+                   gradle-mode
                    ido-vertical-mode
+                   js2-mode
+                   json-mode
+                   magit
                    markdown-mode
                    multiple-cursors
                    paredit
-                   undo-tree
-                   flycheck
-                   web-mode
-                   js2-mode
-                   ac-js2
                    rjsx-mode
-                   json-mode
-                   gradle-mode
-                   editorconfig
-                   coffee-mode
                    solarized-theme
-                   clojure-mode
-                   cider ;; REPL for Clojure in Emacs
-                   go-mode
-                   go-autocomplete
+                   undo-tree
+                   web-mode
                    ))
        (packages (remove-if 'package-installed-p packages)))
   (when packages
     (package-refresh-contents)
     (mapc 'package-install packages)))
 
-
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Paredit
 (dolist (mode pretty-lambda-auto-modes)
@@ -83,7 +86,7 @@
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (rjsx-mode restclient go-errcheck go-complete cypher-mode graphql-mode go-autocomplete gradle-mode 2048-game cider yaml-mode web-mode undo-tree try terraform-mode solarized-theme pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode json-mode ido-vertical-mode groovy-mode go-mode flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode clojure-mode auto-complete ac-js2)))
+    (protobuf-mode magit go-eldoc rjsx-mode restclient go-errcheck go-complete cypher-mode graphql-mode go-autocomplete gradle-mode 2048-game cider yaml-mode web-mode undo-tree try terraform-mode solarized-theme pretty-lambdada paredit multiple-cursors monokai-theme markdown-mode json-mode ido-vertical-mode groovy-mode go-mode flycheck exec-path-from-shell editorconfig dockerfile-mode coffee-mode clojure-mode auto-complete ac-js2)))
  '(tab-width 4))
 
 (if (not window-system)
@@ -361,14 +364,14 @@ located.")
   (setenv var (get-env-from-system var)))
 
 ;; Go specific environment
-(when window-system
-  (progn
+(progn
     (set-env-from-system "PATH")
+    (set-env-from-system "GOROOT")
     (set-env-from-system "GOPATH")
     (mapcar (lambda (arg) (add-to-list 'exec-path arg))
             (mapcar (lambda (arg) (concat arg "/bin"))
                     (split-string (getenv "GOPATH") path-separator)))
-    ))
+    )
 
 (defun custom-go-mode-hook ()
   ;; Use auto-import and gofmt
@@ -380,13 +383,17 @@ located.")
   ;; Godef jump key binding
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "M-,") 'pop-tag-mark)
+  (local-set-key (kbd "C-.") 'godef-jump)
+  (local-set-key (kbd "C-,") 'pop-tag-mark)
   )
 
 (add-hook 'go-mode-hook 'custom-go-mode-hook)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
 
 (set-env-from-system "GOLIBS")
 (add-to-list 'load-path (concat (getenv "GOLIBS")  "/src/github.com/golang/lint/misc/emacs"))
 
 (with-eval-after-load 'go-mode
   (require 'go-autocomplete)
+  (require 'go-eldoc)
   (require 'golint))

@@ -19,7 +19,6 @@ __pycache__/
 # Packages #
 ############
 *.dmg
-*.gz
 *.iso
 
 # Logs and databases #
@@ -70,3 +69,4 @@ activator-*.sbt
 ############
 yarn.lock
 .yarnclean
+.vscode/

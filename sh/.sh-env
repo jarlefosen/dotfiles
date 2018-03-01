@@ -24,8 +24,9 @@ export GCLOUD_SDK_HOME="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud
 export PATH=$PATH:$GCLOUD_SDK_HOME"/bin"
 
 # Misc
-export SCRAPPY_SCRIPTS_SRC="$HOME/dev/unacast/scrappy-scripts/src"
+export SCRAPPY_SCRIPTS_SRC="$HOME/dev/go/src/github.com/unacast/scrappy-scripts/src"
 export SCRAPPY_SCRIPTS_BIN="$HOME/dev/unacast/scrappy-scripts/bin"
 export JARLE_SCRIPTS="$HOME/dev/dotfiles/src"
 export VSCODE_BIN="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:$SCRAPPY_SCRIPTS_SRC:$SCRAPPY_SCRIPTS_BIN:$JARLE_SCRIPTS:$VSCODE_BIN
+export CDPATH=".:$GODEV/src/github.com/"
