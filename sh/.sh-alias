@@ -10,6 +10,15 @@ alias ls='ls -G'
 alias l='ls -CF'
 alias ll='ls -alFh'
 alias la='ls -aF'
+alias mkdirs='mkdir -p'
+
+function mktouch() {
+    for arg in $*; do
+        mkdir -p $(dirname $arg)
+        touch $arg
+        Created $arg
+    done
+}
 
 # Docker
 alias dcleanup='([ -z "$(docker images -q -f dangling=true)" ] && echo "No dangling images") || (echo "Removing dangling images" && docker rmi $(docker images -q -f dangling=true))'
@@ -19,6 +28,7 @@ alias o='open .'
 alias cls='clear;'
 alias wow='git status'
 alias woww='cls wow'
+alias iso8901='date -u "+%Y-%m-%dT%H:%M:%SZ"'
 
 # Sort directories by size
 # optional -s sorts output by size
@@ -49,24 +59,21 @@ function git_time_since_last_commit() {
   git log -1 --pretty=format:"%ar" | sed 's/\([0-9]*\) \(.\).*/\1\2/'
 }
 
-# Remove all branches that are merged into "master"
+# Remove all branches that are merged
 function gitclean() {
-    for b in $(git branch --merged master | grep -v '\(^\*\)\|\(master\)');
-    do
-        git branch -d $b
-    done
+    git branch --list --merged origin/master | tr -ds ' ' '' | grep --exclude-dir={.bzr,CVS,.git,.hg,.svn} -v '*' | grep -v '^master$' | xargs git branch -d
 }
 
 
 # Applications
 alias adb='$ANDROID_HOME/platform-tools/adb'
+alias adb-shake='adb shell input keyevent 82'
+alias idea='open -a "/Applications/$(ls /Applications/ | grep IntelliJ | tail -n 1)"'
 
 # Work work
 alias g='gcloud'
 alias gs='gsutil'
 alias k='kubectl'
-alias curr="uc-current-env"
-alias curc="uc-current-cluster"
 alias switch="uc-switch-env"
 alias s3="aws s3"
 alias ugo="cd ${GOPATH##*:}/src/github.com/unacast/"

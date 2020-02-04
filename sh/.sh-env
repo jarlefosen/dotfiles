@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # Java
-export JAVA_HOME_8="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home"
+export JAVA_HOME_7="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home"
+export JAVA_HOME_8="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/"
+export JAVA_HOME_12="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
 export JAVA_HOME=$JAVA_HOME_8
 
 # Android
@@ -9,11 +11,12 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH=$PATH:$ANDROID_HOME/tools
 
 # Go
-export GOLIBS="$HOME/.golibs"
-export GODEV="$HOME/dev/go"
-export GOPATH="$GOLIBS:$GODEV"
-export GOROOT="/usr/local/opt/go/libexec"
-export PATH=$PATH:$GODEV/bin:$GOLIBS/bin:$GOROOT/bin
+export GO111MODULE=auto
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# Python 3
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Yarn
 export YARNPATH="$HOME/.yarn"
@@ -29,4 +32,6 @@ export SCRAPPY_SCRIPTS_BIN="$HOME/dev/unacast/scrappy-scripts/bin"
 export JARLE_SCRIPTS="$HOME/dev/dotfiles/src"
 export VSCODE_BIN="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:$SCRAPPY_SCRIPTS_SRC:$SCRAPPY_SCRIPTS_BIN:$JARLE_SCRIPTS:$VSCODE_BIN
-export CDPATH=".:$GODEV/src/github.com/"
+
+
+export CDPATH=".:$HOME/dev/src/:$GOPATH/src/"

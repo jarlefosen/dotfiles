@@ -1,16 +1,48 @@
 {
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.tabSize": 2,
-    "editor.quickSuggestionsDelay": 100,
     "files.trimTrailingWhitespace": true,
+    "files.eol": "\n", // formatting only supports LF line endings
     "editor.minimap.enabled": false,
-    "javascript.implicitProjectConfig.checkJs": true,
     "files.trimFinalNewlines": true,
     "editor.multiCursorModifier": "alt",
     "workbench.editor.enablePreview": false,
     "extensions.ignoreRecommendations": false,
     "editor.fontLigatures": true,
     "editor.fontFamily": "Fira Code",
-    "editor.fontSize": 12,
-    "files.insertFinalNewline": true
+    "editor.fontSize": 11,
+    "files.insertFinalNewline": true,
+    "files.autoSave": "onFocusChange",
+    "workbench.startupEditor": "none",
+    "workbench.editor.showTabs": true,
+    "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "zenMode.hideLineNumbers": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "breadcrumbs.enabled": true,
+    "python.jediEnabled": false,
+    "terminal.integrated.rendererType": "dom",
+    "emmet.showExpandedAbbreviation": "never",
+
+    "go.useLanguageServer": false,
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true, // for build and vet errors as you type
+        "findReferences": true   // for finding in-package references
+    },
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true // add parameter placeholders when completing a function
+    },
+    "go.formatTool": "goimports",
+    "editor.renderWhitespace": "none",
+    "java.maven.downloadSources": true,
+    "polacode.transparentBackground": true,
+    "polacode.target": "snippet",
 }

@@ -21,7 +21,7 @@ _usage() {
 }
 
 
-_kube_config_file="$HOME/.kube/config"
+_kube_config_file=${KUBECONFIG:-"$HOME/.kube/config"}
 _kube_current_context_line=$(cat $_kube_config_file | grep current-context)
 _kube_context="${_kube_current_context_line#*current-context: }"
 _DEFAULT_DELIMITER=" "
@@ -34,43 +34,100 @@ _context_raw() {
     echo "$_kube_context"
 }
 
+_context_to_provider() {
+    case "$1" in
+    "gke_"*|"gke-"*)
+        echo "gke"
+        ;;
+    "do_"*|"do-"*)
+        echo "do"
+        ;;
+    "docker-for-desktop"|"minikube")
+        echo "local"
+        ;;
+    esac
+}
+
 _cluster_provider() {
-    echo $(_context_raw) | cut -d "_" -f 1
+    case "$1" in
+    "gke"|"do")
+        echo $1
+        ;;
+    *)
+        echo $(_context_raw) | cut -d "_" -f 1
+        ;;
+    esac
 }
 
 _cluster_project() {
-    echo $(_context_raw) | cut -d "_" -f 2
+    case "$1" in
+    "gke")
+        echo $(_context_raw) | cut -d "_" -f 2
+        ;;
+    "do")
+        echo "do"
+        ;;
+    "local")
+        echo "local"
+        ;;
+    *)
+        echo "-"
+        ;;
+    esac
 }
 
 _cluster_region() {
-    echo $(_context_raw) | cut -d "_" -f 3
+    case "$1" in
+    "gke")
+        echo $(_context_raw) | cut -d "_" -f 3
+        ;;
+    "do")
+        echo echo $(_context_raw) | cut -d "-" -f 2
+        ;;
+    *)
+        echo "-"
+        ;;
+    esac
 }
 
 _cluster_name() {
-    echo $(_context_raw)| cut -d "_" -f 4
+    case "$1" in
+    "gke")
+        echo $(_context_raw)| cut -d "_" -f 4
+        ;;
+    "do")
+        echo $(_context_raw)|cut -d "-" -f 3-
+        ;;
+    *)
+        echo $(_context_raw)
+        ;;
+    esac
 }
 
 _context_namespace() {
-    ns="$(echo $(cat $_kube_config_file | grep $(_cluster_project) -A5 | grep namespace | cut -d':' -f2 | tr -d ' ')| cut -d "_" -f 4)"
+#    ns="$(echo $(cat $_kube_config_file | grep $(_cluster_project "$1") -A5 | grep namespace | cut -d':' -f2 | tr -d ' ')| cut -d "_" -f 4)"
+    ns="$(echo $(cat $_kube_config_file | grep "cluster: $(_context_raw)" -A2 -B1 | grep namespace | cut -d':' -f2 | tr -d ' ')| cut -d "_" -f 4)"
     echo ${ns:-"default"}
 }
 
 _context_part() {
+    provider=$(_context_to_provider "$(_context_raw)")
+
     case "$1" in
     "provider"*)
-        _cluster_provider
+        _cluster_provider $provider
         ;;
     "project"*)
-        _cluster_project
+        _cluster_project $provider
         ;;
     "region"*)
-        _cluster_region
+        _cluster_region $provider
         ;;
     "namespace"*)
-        _context_namespace
+        _context_namespace $provider
         ;;
     "name"*)
-        _cluster_name
+        _cluster_name $provider
         ;;
     "raw"*)
         _context_raw
