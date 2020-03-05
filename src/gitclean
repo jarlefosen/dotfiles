@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Remove all branches that are merged with origin/master, including local master!
+git branch --list --merged origin/master | tr -ds ' ' '' | grep -v '*' | xargs git branch -d
