@@ -67,6 +67,9 @@ activator-*.sbt
 
 # Yarn Pkg #
 ############
-yarn.lock
 .yarnclean
 .vscode/
+.factorypath
+
+# Personal private folders #
+.private/
