@@ -45,6 +45,9 @@ _context_to_provider() {
     "docker-for-desktop"|"minikube")
         echo "local"
         ;;
+    "k3d-"*|"k3d_"*)
+        echo "k3d"
+        ;;
     esac
 }
 
@@ -70,6 +73,9 @@ _cluster_project() {
     "local")
         echo "local"
         ;;
+    "k3d")
+        echo "k3d"
+        ;;
     *)
         echo "-"
         ;;
@@ -82,7 +88,7 @@ _cluster_region() {
         echo $(_context_raw) | cut -d "_" -f 3
         ;;
     "do")
-        echo echo $(_context_raw) | cut -d "-" -f 2
+        echo $(_context_raw) | cut -d "-" -f 2
         ;;
     *)
         echo "-"
@@ -97,6 +103,9 @@ _cluster_name() {
         ;;
     "do")
         echo $(_context_raw)|cut -d "-" -f 3-
+        ;;
+    "k3d")
+        echo $(_context_raw) | cut -d "-" -f 2-
         ;;
     *)
         echo $(_context_raw)

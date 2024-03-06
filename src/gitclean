@@ -1,4 +1,34 @@
 #!/usr/bin/env bash
 
+use_remote=""
+if [ ! -z "$1" ];
+then
+    use_remote="$1"
+else
+    echo "No remotes given, looking for them..."
+    all_remotes="$(git remote show)"
+    num_remotes=$(echo ${all_remotes} | wc -w | tr -d ' ')
+    if [ ${num_remotes} -ne 1 ]
+        then
+            echo "Need exactly one remote, found ${num_remotes}"
+            echo ${all_remotes}
+            exit 2
+    fi
+    use_remote="$all_remotes"
+fi
+
+echo "Using remote: ${use_remote}"
+remote_branch_name="$(git remote show ${use_remote} | grep 'HEAD branch' | rev | cut -f 1 -d ' ' | rev)"
+remote_branch="${use_remote}/${remote_branch_name}"
+
+echo "Removing local branches merged into ${remote_branch}"
 # Remove all branches that are merged with origin/master, including local master!
-git branch --list --merged origin/master | tr -ds ' ' '' | grep -v '*' | xargs git branch -d
+git branch --list --merged ${remote_branch} | tr -ds ' ' '' | grep -v '*' | xargs git branch -d
+
+echo "Removing local branches squash-merged into ${remote_branch}"
+# Code copied from https://stackoverflow.com/a/56026209
+git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do
+    mergeBase=$(git merge-base ${remote_branch} $branch) &&
+        [[ $(git cherry ${remote_branch} $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] &&
+        git branch -D $branch && echo "Deleted branch ${branch}" || true
+done
