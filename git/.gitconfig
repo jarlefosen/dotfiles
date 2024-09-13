@@ -13,5 +13,5 @@
         l = log --pretty=format:'%h : %ar : %an : %s'
         g = log --graph --decorate --pretty=oneline --abbrev-commit --all
         o = log --oneline
-        god = diff -- . ':(exclude)vendor/'   # No golang vendor/
-        gos = status -- . ':(exclude)vendor/' # No golang vendor/
+	fop = fetch origin --prune
+	co = checkout
