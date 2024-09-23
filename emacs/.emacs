@@ -41,7 +41,7 @@
                    paredit
                    rjsx-mode
                    solarized-theme
-                   undo-tree
+;                   undo-tree
                    web-mode
                    ))
        (packages (cl-remove-if 'package-installed-p packages)))
@@ -63,7 +63,7 @@
 (ido-vertical-mode 1)
 
 ;; use undo-tree-mode globally
-(global-undo-tree-mode 1)
+;(global-undo-tree-mode 1)
 
 ;; get the default config for auto-complete (downloaded with
 ;; package-manager)
@@ -89,9 +89,7 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
-; '(preferred-dark 'solarized-dark)
-; '(preferred-dark 'solarized-light)
-; '(custom-enabled-themes preferred-dark)
+ '(custom-enabled-themes theme)
  '(custom-safe-themes
    '("4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default))
  '(fci-rule-color "#073642")
@@ -316,8 +314,6 @@ located.")
 ;; show vertically
 (ido-vertical-mode 1)
 
-;; use undo-tree-mode globally
-(global-undo-tree-mode 1)
 
 ;; Word-wrapping
 (add-hook 'text-mode-hook 'visual-line-mode)
